@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>  
+    <script  src="js/app2.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+ 
+   
+ 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+   
+    </script>
+ 
+          
+    <style>
+    .full
+    	{
+    		width:100%;
+    	}
+    .nav-link
+    	{
+    		color:white;
+    	}
+    .wt
+    	{
+    		color:white;
+    	}
+    </style>    
+</head>
+<body ng-app="mainApp2">
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item active wt">
+       <h2>&nbsp; STATISTICS</h2>
+      </li>      
+      <li class="nav-item ">
+        <a class="nav-link wt" href="#home" style="color:white;">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#personal" style="color:white;">Personal</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#business" style="color:white;">Business</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
+          Options
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#add">Add Stats Ad Clicked</a>
+          <a class="dropdown-item" href="#add2">Add Stat Tracker</a>
+          <a class="dropdown-item" href="#add3">Add Stat Ad Shown</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Delete</a>
+        </div>
+      </li>
+     
+    </ul>
+    <form class="form-inline my-2 my-lg-0" ng-Controller="HomeController">
+      <input class="form-control mr-sm-2" type="text" placeholder="userid" value="" ng-model="userid" >
+      <input class="form-control mr-sm-2" type="text" placeholder="company" value="Search" ng-model="company1">
+      <input class="form-control mr-sm-2" type="text" placeholder="website id" value="Search" ng-model="website">
+      
+      <input type="button" on-click="javascript:main()" value="Generate" class="btn btn-warning"/>
+    </form>
+  </div>
+</nav>
+<br/>
+
+
+<div class="container1">
+  <div class="row">
+    <div class="col-lg-2" >
+    	
+  <div class="list-group">
+  <a href="#" class="list-group-item active">
+    Menu 
+  </a>
+ 
+  <a href="#" class="list-group-item">About Us</a>
+  <a href="#" class="list-group-item">Contact Us</a>
+  <a href="#" class="list-group-item">Register</a>
+  <a href="#" class="list-group-item">Login</a>
+  <a href="#" class="list-group-item">Stats</a>
+  <a href="#" class="list-group-item">Add your business</a>
+</div>  	
+    	
+ 	 			
+    </div>
+    <div class="col-lg-9">
+    	<div ng-view></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+ <script type = "text/ng-template" id ="home.htm">
+
+   
+   <span ng-repeat="x in company">    
+	<h4><a href="http://cdn.adslive.com/{{x.url}}"> <img src="http://cdn.adslive.com/{{x.url}}" style="height:90px;"/></a> {{x.name}} </h4>
+	</span>		
+
+    <p>Your Advert has been shown <strong ng-repeat="x in advert_shown">{{x.advert_shown}}</strong>  times so far on this website.	</p>	
+	
+
+ 
+
+
+
+<div class="row">
+    <div class="col-lg-3">
+	
+	<div class="list-group">
+  <a href="#" class="list-group-item active">
+    PROFILE VIEWS
+  </a>
+  <a href="" class="list-group-item" ng-repeat="x in stats_ad_clicked">{{x.profile_views}}</a>
+
+</div>
+	
+	</div>
+	<div class="col-lg-3">
+	
+	<div class="list-group">
+  <a href="#" class="list-group-item active">
+    DEVICES REACHED
+  </a>
+  <a href="" class="list-group-item" ng-repeat="x in get_advert_views_company">{{x.advert_views}}</a>
+
+</div> 
+	
+	</div>
+		<div class="col-lg-3">
+	
+	<div class="list-group">
+  <a href="#" class="list-group-item active">
+     ADVERT CLICKS
+  </a>
+  <a href="" class="list-group-item" ng-repeat="x in visits1">{{x.visits}}</a>
+
+</div> 
+	
+	</div>
+	<div class="col-lg-3">
+	
+	<div class="list-group">
+  <a href="#" class="list-group-item active">
+   NEW VISITORS
+  </a>
+  <a href="" class="list-group-item" ng-repeat="x in new_visits">{{x.new_visits}}</a>
+
+</div> 
+	
+	</div>
+</div>	
+	
+ 
+
+
+ 
+<hr/>
+
+
+ 
+
+ 
+
+<div class="row">
+    <div class="col-lg-2">
+	<strong>Analytics for </strong>
+	</div>
+	<div class="col-lg-3">
+	 <select class="form-control" style="width:200px;" ng-model="month">
+    <option value="1" selected>JANUARY</option>
+    <option value="2">FEBRUARY</option>
+    <option value="3">MARCH</option>
+    <option value="4">APRIL</option>
+    <option value="5">MAY</option>
+    <option value="6">JUNE</option>
+    <option value="7">JULY</option>
+    <option value="8">AUGUST</option>
+    <option value="9">SEPTEMBER</option>
+    <option value="10">OCTOBER</option>
+    <option value="11">NOVEMBER</option>
+    <option value="12">DECEMBER</option>
+  
+  </select>
+	</div>
+  <div class="col-lg-1">
+	
+  </div>
+</div>
+<hr/>	
+
+
+
+	
+<button type="button" class="btn btn-primary ">
+ ADVERTS VIEWED <span class="badge badge-light" ng-repeat="x in advert_views">{{x.advert_views}}</span>
+</button> 	
+	
+<button type="button" class="btn btn-primary">
+  RETURNED VISITS   <span class="badge badge-light" ng-repeat="x in visits">{{x.visits}}</span>
+</button>
+
+<button type="button" class="btn btn-primary">
+  PROFILE VIEWS  <span class="badge badge-light" ng-repeat="x in profile_views">{{x.profile_views}}</span>
+</button> 
+
+<button type="button" class="btn btn-primary">
+ AVERAGE DAILY CLICKS <span class="badge badge-light" ng-repeat="x in people_reached">{{x.people_reached}}</span>
+</button> 	
+
+
+
+
+<br/><br/>
+<h3>Visitors by Country</h3>
+
+<div  style="height:250px;overflow-y:scroll;">         
+<table class="table table-bordered" >
+<thead class="thead-dark">
+<tr>
+<th>Flag</th><th>Country</th><th>New Visits</th><th>Returned Visits</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="x in stat_tracker |filter: search">
+<td><img src="{{x.img}}" style="height:25px;width:50px;"/> </td><td>{{x.country}}</td><td>{{x.total}}</td><td>{{x.total2}}</td>
+</tr>
+
+</tbody>
+</table>
+	</div>
+<hr/>
+
+
+
+
+
+<div class="row">
+    <div class="col-lg-6">
+			  <div id="donutchart" style="width:auto; height: 300px;border:solid 1px silver;"></div>
+	</div>
+  <div class="col-lg-6">
+	
+	<h4>Browser Traffic for this website</h4>
+	
+	<table class="table table-bordered">
+	<thead class="thead-dark"><tr><th>Browser</th><th>Visits</th></tr></thead>
+	<tr><td>Chrome</td><td>{{chrome}}</td></tr>
+	<tr><td>Firefox</td><td>{{firefox}}</td></tr>
+	<tr><td>Safari</td><td>{{Safari}}</td></tr>
+	<tr><td>Mozilla</td><td>{{Mozilla}}</td></tr>
+	</table>
+	
+	
+  </div>
+</div>
+
+<br/>
+
+
+<center><a href="http://cdn.adslive.com/{{image}}"> <img src="http://cdn.adslive.com/{{image}}" style="height:70px;border:solid 1px silver;"/></a></center>
+<br/>
+
+<div class="row">
+    <div class="col-lg-6" style="border:solid 1px silver;padding:10px;">
+	
+	<input type="button" value="UPGRADES  " class="btn btn-success"/> <br/><br/>
+	<input type="button" value="UPGRADE CLASSIFIED ADVERTISEMENT" class="btn btn-primary"/> <br/><br/>
+	<input type="button" value="ADD BANNER" class="btn btn-primary"/> <br/><br/>
+	<input type="button" value="ADD A VIDEO ADVERT" class="btn btn-primary"/>
+	
+	
+	</div>
+	<div class="col-lg-6">
+	<div id="columnchart_values" style="width:auto; height: 300px;border:solid 1px silver;"></div>
+	</div>
+</div>	
+ </script>
+        
+        
+        
+         
+ <script type = "text/ng-template" id ="personal.htm">
+            <h2> Personal Phonebook </h2>
+            {{message}}
+		
+ </script>
+      
+ <script type = "text/ng-template" id ="business.htm">
+            <h2> Business Phonebook </h2>
+            {{message}}
+		
+ </script> 
+         
+ <script type = "text/ng-template" id ="view.htm">
+            <h2> View Phonebook </h2>
+          
+			  <table class="table table-bordered">
+
+<tbody>
+<tr>
+<td>NAME:</td><td>{{name}}</td>
+</tr>
+<tr>
+<td>NUMBER:</td><td>{{number}}</td>
+</tr>
+<tr>
+<td>CATEGORY:</td><td>{{category}}</td>
+</tr>
+<tr>
+<td>STATUS:</td><td>{{status}}</td>
+</tr>
+
+</tbody>
+</table>	  
+		
+ </script> 
+      																								
+<script type = "text/ng-template" id ="add.htm">
+<h2> Add Stats </h2>
+       
+<form ng-submit="add()">	   
+    <table class="table table-bordered">
+
+       <tbody>
+       <tr>
+       <td>WEBSITE ID:</td><td>
+           <input type="text" class="form-control" ng-model="website_id"></td>
+       </tr>
+	   
+       <tr>
+       <td>HOW MANY:</td><td> <input type="text" class="form-control" ng-model="ip"></td>
+       </tr>
+	   
+       <tr>
+       <td>COMPANY ID:</td><td> <input type="text" class="form-control" ng-model="company_ad_visited"></td>
+       </tr>
+	   
+       <tr>
+       <td>AD TYPE:</td>
+       <td> 
+       <select class="form-control" ng-model="ad_type">
+         <option value="advert">advert</option>
+         <option value="classified">classified</option>
+         <option value="promotion_classified">promotion_classified</option>
+       </select>
+       </td>
+       </tr>
+	   
+       <tr>
+       <td>MONTHS:</td>
+       <td> 
+       <select class="form-control" ng-model="months">
+         <option value="1">ONE MONTH</option>
+         <option value="2">12 MONTHS</option>
+       </select>
+       </td>
+       </tr>
+	   
+       <tr>
+       <td>Timestamp:</td><td> <input type="date" class="form-control" ng-model="timestamp"></td>
+       </tr>
+       <tr><td></td><td>   <button type="submit" class="btn btn-primary">Submit</button> {{error}}	</td>
+       </tr>
+
+       </tbody>
+   </table>
+
+</form>
+	
+</script>
+ 
+       																								
+<script type ="text/ng-template" id="add2.htm">
+<h2> Add Stat Tracker </h2>
+       
+<form ng-submit="add2()">	   
+   <table class="table table-bordered">
+     <tbody>
+       <tr>
+       <td>WEBSITE ID:</td><td>
+           <input type="text" class="form-control" ng-model="website_id"></td>
+       </tr>
+	   
+       <tr>
+       <td>HOW MANY:</td><td> <input type="text" class="form-control" ng-model="ip"></td>
+       </tr>
+	   
+       <tr>
+       <td>COMPANY ID:</td><td> <input type="text" class="form-control" ng-model="company_ad_visited"></td>
+       </tr>
+	   
+       <tr>
+       <td>AD TYPE:</td>
+       <td> 
+       <select class="form-control" ng-model="ad_type">
+         <option value="1">advert</option>
+         <option value="2">classified</option>
+         <option value="3">promotion_classified</option>
+       </select>
+       </td>
+       </tr>
+	   
+       <tr>
+       <td>MONTHS:</td>
+       <td> 
+       <select class="form-control" ng-model="months">
+         <option value="1">ONE MONTH</option>
+         <option value="2">12 MONTHS</option>
+       </select>
+       </td>
+       </tr>
+	   
+       <tr>
+       <td>Timestamp:</td><td> <input type="date" class="form-control" ng-model="timestamp"></td>
+       </tr>
+       <tr><td></td><td>   <button type="submit" class="btn btn-primary">Submit</button> {{error}}	</td>
+       </tr>
+
+     </tbody>
+  </table>
+
+</form>
+	
+</script>
+
+ 
+<script type="text/ng-template" id="add3.htm">
+<h2> Add Stat Ad Shown </h2>
+       
+<form ng-submit="add3()">	   
+   <table class="table table-bordered">
+     <tbody>
+          <tr>
+          <td>WEBSITE ID:</td>
+		  <td><input type="text" class="form-control" ng-model="website_id"></td>
+          </tr>
+		  
+          <tr>
+          <td>HOW MANY:</td><td> <input type="text" class="form-control" ng-model="ip"></td>
+          </tr>
+		  
+          <tr>
+          <td>COMPANY ID:</td><td> <input type="text" class="form-control" ng-model="company_ad_visited"></td>
+          </tr>
+
+          <tr>
+          <td>MONTHS:</td>
+          <td> 
+          <select class="form-control" ng-model="months">
+            <option value="1">ONE MONTH</option>
+            <option value="2">12 MONTHS</option>
+          </select>
+          </td>
+          </tr>
+		  
+          <tr>
+          <td>Timestamp:</td><td> <input type="date" class="form-control" ng-model="timestamp"></td>
+          </tr>
+          <tr><td></td><td>   <button type="submit" class="btn btn-primary">Submit</button> {{error}}	</td>
+          </tr>
+
+       </tbody>
+    </table>
+
+</form>
+	
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Government Directory South Africa</title>
+   
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://mdbootstrap.com/live/_MDB/templates/Admin/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="https://mdbootstrap.com/live/_MDB/templates/Admin/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Customizer -->
+    <link rel="stylesheet" href="https://mdbootstrap.com/live/_MDB/css/customizer.min.css">
+
+    <!-- Your custom styles (optional) -->
+    <link href="https://mdbootstrap.com/live/_MDB/templates/Admin/css/style.css" rel="stylesheet">
+    
+    
+    
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>  
+    <script  src="js/app2.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+          
+    <style>
+    .full
+    	{
+    		width:100%;
+    	}
+    .nav-link
+    	{
+    		color:white;
+    	}
+    .wt
+    	{
+    		color:white;
+    	}
+    </style>
+</head> 
+
+<body ng-app="mainApp2" class="fixed-sn black-skin" > 
+
+
+
+    
+    
+    <script type="text/javascript" src="https://mdbootstrap.com/live/_MDB/templates/Admin/js/jquery-3.1.1.min.js"></script>
+
+  
+  
+	
+    <!--Double navigation-->
+    <header>
+        <!-- Sidebar navigation -->
+        <ul id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
+            <!-- Logo -->
+            <li>
+                   <br> <center><img src="identity1.fw.png" alt="" width="183" height="43" /></center>
+                <br>
+            </li>
+            <!--/. Logo -->
+            <!-- Side navigation links -->
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="home.html" class="waves-effect">Dahboard v1</a>
+                                </li>
+                                <li><a href="home%20v2.html" class="waves-effect">Dahboard v2</a>
+                                </li>
+                                <li><a href="home%20v3.html" class="waves-effect">Dahboard v3</a>
+                                </li>
+                            </ul>
+                        </div></li>
+                    <li><a href="<?php echo HTTP_BASE_PATH; ?>home" id="about">Home</a></li>
+            <li><a href="<?php echo HTTP_BASE_PATH; ?>home/about" id="about">About Us</a></li>
+            <li><a href="<?php echo HTTP_BASE_PATH; ?>home/contact" id="contact">Contact Us</a></li>
+                        
+               <li><a href="<?php echo HTTP_BASE_PATH; ?>home/view_stats">Profile</a></li>
+                <li><a href="<?php echo HTTP_BASE_PATH; ?>home/logout">Logout</a></li>
+            
+                <li><a href="<?php echo HTTP_BASE_PATH; ?>home/register">Register</a></li>
+                <li><a href="<?php echo HTTP_BASE_PATH; ?>home/do_login">Login</a></li>
+            
+            <li><a href="<?php echo HTTP_BASE_PATH; ?>statistics/stats">Stats</a></li>
+            <li><a id="business_add_btn" href="<?php echo HTTP_BASE_PATH; ?>home/postad">Add your business</a></li>
+             
+              <li><hr style="color:white;"/></li>      
+              <li><a  href="#home">View Company Stats</a></li>
+              <li><a  href="#general">General Stats</a></li>
+              <li><a  href="#add">Add Stats Ad Clicked</a></li>
+              <li><a  href="#add2">Add Stat Tracker</a></li>
+              <li><a  href="#add3">Add Stat Ad Shown</a></li>
+             
+                                          
+                </ul>
+            </li>
+            <!--/. Side navigation links -->
+            <div class="sidenav-bg mask-strong" style="background-color:#028B6 ;color: #fff"></div>
+        </ul>
+        <!--/. Sidebar navigation -->
+        
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-dark scrolling-navbar double-nav" style="background-color:#028B62;color: black">
+           
+            <!-- SideNav slide-out button -->
+            <div class="float-left">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+                
+            </div>
+            
+            <!-- Breadcrumb-->
+            <ol class="breadcrumb hidden-lg-down">
+                <li class="breadcrumb-item active" style="color: black">Analytics</li>
+            </ol>
+            
+            <!--Navbar links-->
+       
+                 
+			<ul class="nav navbar-nav nav-flex-icons ml-auto">
+				
+           <li class="nav-item dropdown" style="color:black;">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black;">
+                        <i class="fa fa-user" style="color:black;"></i> <span class="hidden-sm-down" style="color:black;">Profile</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-ins dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a  class="dropdown-item" href="<?php echo HTTP_BASE_PATH; ?>home/logout">Logout</a>
+                    </div>
+                </li>
+                
+            </ul>
+     
+            <!--/Navbar links-->
+            
+        </nav>
+        <!-- /.Navbar -->
+        
+    </header>
+    <!--/.Double navigation-->
+
+    <!--Main layout-->
+    <main class="">
+
+     <div ng-view></div>
+   
+    </main>
+    
+    
+
+ <script type = "text/ng-template" id ="home.htm">
+
+
+   <div class="container-fluid" ng-Controller="HomeController">
+
+      
+     
+           
+            <!-- First row -->
+            
+            <!-- /.First row -->
+
+            <!--Section: Main Chart--> 
+            
+            <!--/Section: Main chart-->
+      <h3><br>
+    <span ng-repeat="x in company">         
+    <img src="http://cdn.adslive.com/{{x.url}}" width="100px" height="68px" style="border: solid; border-width: 1px; border-color: #333; margin-right: 6px;box-shadow: 7px 7px 2px #999;"> 
+        
+ {{x.name}}
+      </span>        
+      </h3>
+            
+            
+            <h5 style="color:#243D7B">Your Advert has been shown <span class="badge light-blue animated pulse infinite">
+                     	<strong ng-repeat="x in advert_shown">{{x.advert_shown}}</strong>
+                     	</span> times so far on this website.</h5> 
+           
+        
+       
+       <br><br><h3>General Analytics <button 
+             
+              title="General Analytics"
+               data-toggle="popover"
+                data-placement="right"
+                 data-content="This is the general statistics about this website and your advertisement.The information for each statistic is provided in each panel below for a better understanding."
+                  style="background-color: transparent;border: none;">
+				 	
+
+           					 		
+              </button></h3>       
+      <hr>
+
+<div class="row">
+                    <!--First column-->
+                    <div class="col-md-3 mb-1">
+                        <!--Card-->
+                        <div class="card card-cascade cascading-admin-card">
+
+                            <!--Card Data-->
+                            <div class="admin-up">
+                                <i class="fa  fa-television  blue darken-3"></i>
+                                <div class="data">
+                                    <p> PROFILE <strong>VIEW</strong>S</p>
+                                    <h6><div id="div1">
+                      		<img src="<?php echo HTTP_IMAGES_PATH; ?>loading1.gif" alt=""   height="50" />
+										</div><span ng-repeat="x in stats_ad_clicked">{{x.profile_views}}</span> </h6>
+                                </div>
+                            </div>
+                            <!--/.Card Data-->
+
+                            <!--Card content-->
+                            <div class="card-block" style="padding: 25px">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <!--Text-->
+                                <p class="card-text">The total amount of people viewed my profiles.</p>
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                    <!--/First column-->
+
+                    <!--Second column-->
+                    <div class="col-md-3 mb-1">
+                        <!--Card-->
+                        <div class="card card-cascade cascading-admin-card">
+
+                            <!--Card Data-->
+                            <div class="admin-up">
+                                <i class="fa fa-hand-pointer-o deep-purple darken-4"></i>
+                                <div class="data">
+                                    <p> ADVERT CLICKS</p>
+                                    <h6><div id="div2">
+                      		<img src="<?php echo HTTP_IMAGES_PATH; ?>loading1.gif" alt=""   height="50" />
+						    </div>
+                               <span ng-repeat="x in visits1">{{x.visits}}</span>
+                                 </h6>
+                                </div>
+                            </div>
+                            <!--/.Card Data-->
+
+                            <!--Card content-->
+                            <div class="card-block" style="padding: 25px">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <!--Text-->
+                                <p class="card-text">The total amount of people viewed my advert.</p>
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                    <!--/Second column-->
+
+                    <!--Third column-->
+                    <div class="col-md-3 mb-1">
+                        <!--Card-->
+                        <div class="card card-cascade cascading-admin-card">
+
+                            <!--Card Data-->
+                            <div class="admin-up">
+                                <i class="fa fa-desktop indigo"></i>
+                                <div class="data">
+                                    <p>DEVICES REACHED</p>
+                                    <h6><div id="div3"><img src="<?php echo HTTP_IMAGES_PATH; ?>loading1.gif" alt=""   height="50" />
+ </div>
+                            <span ng-repeat="x in get_advert_views_company">{{x.advert_views}}</span>   
+                               </h6>
+                                </div>
+                            </div>
+                            <!--/.Card Data-->
+
+                            <!--Card content-->
+                            <div class="card-block" style="padding: 25px">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <!--Text-->
+                                <p class="card-text">People that are reached by this website.</p>
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                    <!--/Third column-->
+
+                    <!--Fourth column-->
+                    <div class="col-md-3 mb-1">
+                        <!--Card-->
+                        <div class="card card-cascade cascading-admin-card">
+
+                            <!--Card Data-->
+                            <div class="admin-up">
+                                <i class="fa fa-group blue darken-4"></i>
+                                <div class="data">
+                                    <p>NEW VISITORS</p>
+                                    <h6><div id="div4"><img src="<?php echo HTTP_IMAGES_PATH; ?>loading1.gif" alt=""   height="50" />
+					 </div>
+                               
+										<span ng-repeat="x in new_visits">{{x.new_visits}}</span>    
+                               </h6>
+                                </div>
+                            </div>
+                            <!--/.Card Data-->
+
+                            <!--Card content-->
+                            <div class="card-block" style="padding: 25px">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <!--Text-->
+                                <p class="card-text">The number of new visitors this month.</p>
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                    <!--/Fourth column-->
+					
+                </div><br><br><strong style="font-size: 24px; color: #333;">
+                Analytics for <div class="btn-group">
+    
+ <select class="browser-default custom-select"  style="width:100%" ng-model="bymonth" ng-change="bym()">
+    <option value="1" selected>JANUARY</option>
+    <option value="2">FEBRUARY</option>
+    <option value="3">MARCH</option>
+    <option value="4">APRIL</option>
+    <option value="5">MAY</option>
+    <option value="6">JUNE</option>
+    <option value="7">JULY</option>
+    <option value="8">AUGUST</option>
+    <option value="9">SEPTEMBER</option>
+    <option value="10">OCTOBER</option>
+    <option value="11">NOVEMBER</option>
+    <option value="12">DECEMBER</option>
+  
+  </select>
+
+	
+    <div class="dropdown-menu">
+        
+    
+        
+        
+        <form action="<?php echo base_url() ?>home/viewstat/<?php echo $x; ?>/<?php echo $get_companyid_from_user;?>" method="post">
+        <input type="submit" class="dropdown-item <?php if($month==$x){echo 'active';}?>" value="<?php echo $m; ?>">
+        </form>
+        
+      
+
+        </div>
+</div> </strong> <button 
+             
+              title="Header"
+               data-toggle="popover"
+                data-placement="right"
+                 data-content="Government Directory actively tracks all keep growing. "
+                  style="background-color: transparent;border: none;">
+     					 		
+              </button><br>
+<hr>
+               <div class="row mb-1"> 
+                
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3>
+                        <div id="div5"><img src="<?php echo HTTP_IMAGES_PATH; ?>loading1.gif" alt=""   height="50" />
+					 	</div>
+		<span  ng-repeat="x in advert_views">{{x.advert_views}}</span>			 
+                       
+                       </h3>
+                        <p>Adverts viewed
+						</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3><div id="div6"><img src="<?php echo HTTP_IMAGES_PATH; ?>loading1.gif" alt=""   height="50" />
+					 	</div>
+	 <span  ng-repeat="x in visits">{{x.visits}}</span>
+                       </h3>
+                        <p>Returned Visits
+						</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3><div id="div7"><img src="<?php echo HTTP_IMAGES_PATH; ?>loading1.gif" alt=""   height="50" />
+					 	</div>
+	<span  ng-repeat="x in profile_views">{{x.profile_views}}</span>				
+                       
+                         </h3>
+                        <p>Profile Views
+						</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3><div id="div8"><img src="<?php echo HTTP_IMAGES_PATH; ?>loading1.gif" alt=""   height="50" />
+					 	</div>
+					 
+         <span  ng-repeat="x in people_reached">{{x.people_reached}}</span>              
+                         </h3>
+                        <p>AVERAGE DAILY CLICKS FOR THIS SITE
+						</p>
+                    </div>
+
+                </div>
+
+            </div><br>
+            <!-- Section: data tables -->
+             <h4>
+        Visits By Country : 
+     
+        </h4>       
+     	 <hr><br>
+            <div id="div14">
+			
+    <div  style="height:250px;overflow-y:scroll;">         
+<table class="table table-bordered">
+	<thead class="thead-dark" style="background-color:#222;color:white;">
+<tr>
+<th>Flag</th><th>Country</th><th>New Visits</th><th>Returned Visits</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="x in stat_tracker |filter: search">
+<td><img src="{{x.img}}" style="height:25px;width:50px;"/> </td><td>{{x.country}}</td><td>{{x.total}}</td><td>{{x.total2}}</td>
+</tr>
+
+</tbody>
+</table>
+	</div>
+			</div>
+			<br/> <br/> 
+  <h3>Visits By Browser 
+    
+    </h3>
+
+           
+<hr>
+  <section class="section">
+ 			<div class="row">
+	   
+ <div class="col-md-4">
+                        
+                        <div class="card mb-r">
+                            <div class="card-block" >
+                              
+                                <h4 class="h4-responsive text-center mb-1">
+                                    Total Visits by Browser
+                                </h4>
+                                <div id="donutchart" style="width:auto; height: 300px;"></div>
+                            </div>
+                        </div>
+                       
+
+                    </div>
+ 
+				
+  <div class="col-md-8" style="max-height:320px; overflow-y: scroll">
+           
+            <div class="card mb-r">
+              
+             <button 
+             
+              title="Header"
+               data-toggle="popover"
+                data-placement="top"
+                 data-content="Government Directory actively tracks all keep growing. "
+                  style="background-color: transparent;border: none;">
+				 	
+					 		
+              </button>
+             
+                            <div class="card-block" style="padding: 25px">
+                                <div id="div9">
+                      		<img src="<?php echo HTTP_IMAGES_PATH; ?>loading1.gif" alt=""   height="50" />
+						    </div>
+                           
+                           	<h4>Browser Traffic for this website</h4>
+	
+	<table class="table table-bordered">
+	<thead class="thead-dark"><tr><th>Browser</th><th>Visits</th></tr></thead>
+	<tr><td>Chrome</td><td>{{chrome}}</td></tr>
+	<tr><td>Firefox</td><td>{{firefox}}</td></tr>
+	<tr><td>Safari</td><td>{{Safari}}</td></tr>
+	<tr><td>Mozilla</td><td>{{Mozilla}}</td></tr>
+	</table>
+                           
+                            </div>
+                        </div>
+                          </div>  
+                          	</div>                    
+
+            </section>
+                          
+                               
+			
+				<div class="banner-widget">
+				              
+				<center>
+				
+			<a  href="<?php echo base_url();?>home/company/<?php echo $get_companyid_from_user?>" target="_blank">
+	<img style="margin-bottom:20px;max-height: 300px;border: solid;color: #555;border-width: 1px;max-width:600px;" src="http://cdn.adslive.com/{{image}}">
+			</a>
+				</center>
+				
+
+				
+				
+				
+              
+               <center> <a  href="<?php echo base_url();?>home/company/<?php echo $get_companyid_from_user ?>" target="_blank">View</a></center>
+           
+
+                     
+
+                        </div>       <br><br>   
+
+
+
+         
+			<strong style="font-size: 24px; color: #333;">
+                Advertisement Information </strong><br>
+<hr><br>
+<section class="section">
+
+                <!--Main row-->
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <!--Card-->
+                        <div class="card card-cascade narrower">
+
+                            <!--Admin panel-->
+                            <div class="admin-panel">
+
+                                <!--First row-->
+                                <div class="row mb-0">
+
+                                    <!--First column-->
+                                    <div class="col-md-5">
+
+                                        <!--Panel title-->
+                                        <div class="view left" style="background:#028B62">
+                                            <h2>Upgrades
+											</h2>
+                                        </div>
+   
+										<!--Panel data-->
+                                        <div class="row card-block pt-3">
+
+                                            <!--First column-->
+                                            <div class="col-md-12" style="margin-left: 10px;margin-right: 10px">
+
+                                                <br>
+<button type="button" class="btn btn-elegant btn-block" data-toggle="modal" data-target="#upgrade_ad">
+    <strong>Upgrade Classified Advertisement</strong>
+</button><br>
+
+<!-- Modal -->
+<div class="modal fade" id="upgrade_ad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            
+            <!--Body-->
+            <div class="modal-body">
+              
+               <!--Panel-->
+<div class="card">
+    <div class="card-header danger-color-dark white-text">
+        <strong>Upgrade Classified Advertisement</strong> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+    </div>
+    <div class="card-block" style="padding: 25px">
+        <h4 class="card-title"><strong>Upgrade</strong> your <strong>Advertisement</strong> to a <strong>2017 Design</strong>.Keep up to date with the <strong>Latest</strong> design <strong>Trends</strong></h4>
+        <div  style=" width: 100%">
+        <img width="100%" src="<?php echo HTTP_IMG_PATH; ?>placeholder.fw.png" alt="" />
+        </div>
+        <p class="card-text"><strong><h5>Advantages :</h5></strong>
+        <p class="btn btn-sm  btn-elegant "><strong>GET MORE VIEWS</strong></p>
+        <p class="btn btn-sm  btn-elegant "><strong>MODERN DESIGN MAKES PEOPLE MORE CURIOUS</strong></p>
+        <p class="btn btn-sm  btn-elegant "><strong>GROW YOUR REPUTATION </strong></p>
+        <p class="btn btn-sm  btn-elegant "><strong>GET MORE ADVERT VIEWS</strong></p>
+        <p class="btn btn-sm  btn-elegant "><strong>GET MORE ADVERT CLICKS</strong></p>
+        <p class="btn btn-sm  btn-elegant"><strong>INCREASE YOUR PROFILE VIEWS</strong></p>
+        <p class="btn btn-sm  btn-elegant"><strong>LET YOUR BRAND REACH OUT TO MORE PEOPLE</strong></p><br>
+        
+         <h6><strong><b>To upgrade your advert , Click on proceed and one of our agents will contact you to inform you about the the simple process to follow in order to upgrade your advertisment.</b></strong></h6>
+         <a class="btn btn-elegant" data-dismiss="modal">Cancel</a>
+         <a class="btn btn-danger" href="<?php echo base_url();?>home/upgrade_advert/<?php echo $get_companyid_from_user;?>"  onclick="return confirm('Do you want to continue ?')">Proceed</a>
+    </div>
+</div>
+<!--/.Panel-->
+            </div>
+            <!--Footer-->
+           
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Modal -->
+                                                <div class="md-form d-inline-block">
+                                                  
+                                                </div>
+
+                                                <br>
+<button type="button" class="btn btn-elegant btn-block" data-toggle="modal" data-target="#add_banner">
+    <strong>Add A Banner</strong>
+</button><br>
+
+<!-- Modal -->
+<div class="modal fade" id="add_banner" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            
+            <!--Body-->
+            <div class="modal-body">
+              
+               <!--Panel-->
+<div class="card">
+    <div class="card-header danger-color-dark white-text">
+        <strong>Add A Banner</strong> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+    </div>
+    <div class="card-block" style="padding: 25px">
+        <h4 class="card-title"><strong>Upgrade</strong> your <strong>Profile</strong> to the  <strong>Next Level</strong></h4>
+        <h6>
+		We have a variety of banner sizes that are displayed in different parts of our websites.To make your company profile viewable to more people, you should  add as many banner sizes that you can to your company profile. A brief description of our different banner types and sizes are provided below :
+       </h6>
+       
+       <ul class="nav nav-tabs md-pills pills-red" role="tablist" style="background:#e5e5e5;color: #000;">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#panel31" role="tab">View Page </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel32" role="tab">Classified Banner</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#panel33" role="tab">Classified Large Banner</a>
+    </li>
+    <li class="nav-item">
+
+        <a class="nav-link" data-toggle="tab" href="#panel34" role="tab">Promotional </a>
+    </li>
+</ul>
+<!-- Tab panels -->
+<div class="tab-content">
+    <!--Panel 1-->
+    <div class="tab-pane fade in show active" id="panel31" role="tabpanel">
+        <br>
+        <p>A view page banner is a 468 x 60 dimension advert.We usually put these ads in between our web content.Our view page ads has a large amount of clicks due to its ability to fit into spaces that grabs our users attention.</p>
+        <img width="100%" src="<?php echo HTTP_IMG_PATH; ?>view_page.fw.png" alt="" />
+    </div>
+    <!--/.Panel 1-->
+    <!--Panel 2-->
+    <div class="tab-pane fade" id="panel32" role="tabpanel">
+        <br>
+        <p>A Classified banner is a 300 x 250 dimension advert.We usually put these ads around our web content.These adverts reach thousands of different people on a daily basis.</p>
+        <img width="100%" src="<?php echo HTTP_IMG_PATH; ?>classified.fw.png" alt="" />
+    </div>
+    <!--/.Panel 2-->
+    <!--Panel 3-->
+    <div class="tab-pane fade" id="panel33" role="tabpanel">
+        <br>
+        <p>A Classified Large banner is a 300 x 600 dimension advert.We usually put these ads around our web content.This is an amazing technique to catch a users attention with your unique brand.</p>
+        <img width="100%" src="<?php echo HTTP_IMG_PATH; ?>classified_large.fw.png" alt="" />
+    </div>
+    <!--/.Panel 3-->
+    
+    <!--Panel 3-->
+    <div class="tab-pane fade" id="panel34" role="tabpanel">
+        <br>
+        <p>A Promotional banner is a 1125 x 345 dimension advert.This is a powerful way to advertise your business.With a promotional ad you are guaranteed profile views and advert clicks.</p>
+        <img width="100%" src="<?php echo HTTP_IMG_PATH; ?>promotional.fw.png" alt="" />
+    </div>
+    <!--/.Panel 3-->
+</div>
+       <h6><strong><b>Select the type/s of banners that you would like to add and click on proceed and one of our agents will contact you to inform you about the the simple process to follow in order to add a new banner to your company profile.</b></strong></h6>
+       
+     <h5><strong>Banner Types</strong></h5>
+     <form action="<?php echo base_url();?>home/add_banner/<?php echo $get_companyid_from_user;?>" method="post">
+     <fieldset class="form-group">
+    <input type="checkbox" id="vp" name="vp" value="2">
+    <label for="vp">View page banner</label>
+	 <i style="margin-left: 3px"></i>
+   
+    <input type="checkbox" id="cbanner" name="cbanner" value="2">
+    <label for="cbanner">Classified banner</label>
+    <i style="margin-left: 3px"></i>
+    
+    <input type="checkbox" id="clbanner" name="clbanner" value="2">
+    <label for="clbanner">Classified large banner</label>
+    <i style="margin-left: 3px"></i>
+    
+    <input type="checkbox" id="promo_banner" name="promo_banner" value="2">
+    <label for="promo_banner">Promotional banner</label>
+    
+</fieldset>
+         <a class="btn btn-elegant" data-dismiss="modal">Cancel</a><button type="submit" class="btn btn-danger" name="submit" onclick="return confirm('Do you want to continue ?')">Proceed</button>
+         </form>
+    </div>
+</div>
+<!--/.Panel-->
+            </div>
+           
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Modal --> 
+                                                <div class="md-form d-inline-block">
+                                                  
+                                                </div>
+                                                <div class="md-form d-inline-block float-md-right">
+                                                    
+                                                
+                                                </div>
+                                                
+                                                                                               
+<button type="button" class="btn btn-elegant btn-block"  data-toggle="modal" data-target="#add_video">
+  <strong> Add A Video Advert</strong>
+</button><br>
+
+<!-- Modal -->
+<div class="modal fade" id="add_video" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+           <div class="modal-body">
+              
+               <!--Panel-->
+<div class="card">
+    <div class="card-header danger-color-dark white-text">
+        <strong>Upgrade Classified Advertisement</strong> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+    </div>
+    <div class="card-block" style="padding: 25px">
+        <h4 class="card-title">Video Marketing</h4>
+        <h6><strong>Some companies are caught in the conundrum of trying to decide whether to embark on a video advertising campaign � or wondering why they�re not already doing it. Put simply, if you�re not using video as part of your marketing strategy, you�ll be left behind.</strong></h6>
+        
+        <p class="card-text"><strong><h5>Advantages :</h5></strong>
+        <p class="btn btn-sm  btn-elegant "><strong>Video tells your story better than other formats.</strong></p>
+        <p class="btn btn-sm  btn-elegant "><strong>Video ads do well among mobile users. </strong></p>
+        <p class="btn btn-sm  btn-elegant "><strong>People share videos.</strong></p>
+        <p class="btn btn-sm  btn-elegant "><strong>Video ads convert sales.</strong></p>
+        <p class="btn btn-sm  btn-elegant "><strong>Video lives forever, making it more cost-effective over time.</strong></p>
+        <p class="btn btn-sm  btn-elegant "><strong>GROWS YOUR BRAND </strong></p>
+        <br>
+       <p class="card-text"> <strong><h5>Let Us Help You Create Your Video Like This :</h5></strong>
+        <iframe width="100%" height="280" src="https://www.youtube.com/embed/QOmjk7mPOCI" frameborder="0" allowfullscreen></iframe>
+         <h6><strong><b>To create a video advert , Click on proceed and one of our agents will contact you to inform you about the the simple process to follow in order to upgrade your advertisment.</b></strong></h6>
+         <a class="btn btn-elegant" data-dismiss="modal">Cancel</a><a class="btn btn-danger" href="<?php echo base_url();?>home/add_video/<?php echo $get_companyid_from_user;?>" onclick="return confirm('Do you want to continue ?')">Proceed</a>
+    </div>
+</div>
+<!--/.Panel-->
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- Modal --> 
+                                                <div class="md-form d-inline-block">
+                                                </div>
+                                                <div class="md-form d-inline-block float-md-right">
+                                                    
+                                                   
+                                                </div>
+
+                                            </div>
+                                            <!--/First column-->
+
+                                        </div>
+                                        <!--/Panel data-->
+                                    </div>
+                                    <!--/First column-->
+
+                                    <!--Second column-->
+                                    <div class="col-md-7">
+                                        <!--Cascading element-->
+                                        <div class="view right mb-r" style="background:#028B62">
+                                            <!--Main chart-->
+                                            <h5>Profiles Viewed</h5>
+                                 <center><div id="columnchart_values" style="width:100%; height: 300px;border-radius:5px;"></div> </center>
+                                           
+
+										</div>
+
+                                        <!--/Cascading element-->
+                                    </div>
+                                    <!--/Second column-->
+                                    <!-- Button trigger modal -->
+
+                                </div>
+                                <!--/First row-->
+
+                            </div>
+                            <!--/Admin panel-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+
+                </div>
+             <!--/Main row-->
+
+            </section>
+		
+        </div>
+
+
+ </script>
+        
+ <script type = "text/ng-template" id ="general.htm">
+
+
+<!------------------------------------JQUERY LIB -------------------------------------------->
+    <title> Government South Africa - General Statistics</title>
+
+
+<body class="fixed-sn black-skin" ng-Controller=GeneralController">
+
+  
+	
+ 
+    <!--/.Double navigation-->
+
+    <!--Main layout-->
+        <main1 class="">
+
+        <div class="container-fluid">
+
+            <!-- First row -->
+            
+            <!-- /.First row -->
+
+            <!--Section: Main Chart--> 
+            <!--/Section: Main chart-->
+           
+            <h3><br>  Government South Africa</h3>
+            <h5 style="color:#333">We have displayed 
+			
+		<span class="badge blue darken-2 animated pulse infinite" ng-repeat="x in get_ads_shown">
+			{{x.advert_shown}}
+
+        </span> adverts so far.</h5> 
+
+ 
+             <h2><span class="badge blue"></span></h2>
+             <h2><span class="badge blue"></span></h2>
+             <h2><span class="badge blue"></span></h2>
+             
+   <br>        
+<h3>Analytics For 
+<div class="btn-group">
+    <button class="btn btn-default btn dropdown-toggle waves-effect waves-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <strong> 2018</strong>
+    </button>
+    <div class="dropdown-menu">
+        
+                <form action="http://test.adslive.com/government.co.za/statistics/stats/11/2010" method="post">
+        <input type="submit" class="dropdown-item " value="2010">
+        </form>
+                <form action="http://test.adslive.com/government.co.za/statistics/stats/11/2011" method="post">
+        <input type="submit" class="dropdown-item " value="2011">
+        </form>
+                <form action="http://test.adslive.com/government.co.za/statistics/stats/11/2012" method="post">
+        <input type="submit" class="dropdown-item " value="2012">
+        </form>
+                <form action="http://test.adslive.com/government.co.za/statistics/stats/11/2013" method="post">
+        <input type="submit" class="dropdown-item " value="2013">
+        </form>
+                <form action="http://test.adslive.com/government.co.za/statistics/stats/11/2014" method="post">
+        <input type="submit" class="dropdown-item " value="2014">
+        </form>
+                <form action="http://test.adslive.com/government.co.za/statistics/stats/11/2015" method="post">
+        <input type="submit" class="dropdown-item " value="2015">
+        </form>
+                <form action="http://test.adslive.com/government.co.za/statistics/stats/11/2016" method="post">
+        <input type="submit" class="dropdown-item " value="2016">
+        </form>
+                <form action="http://test.adslive.com/government.co.za/statistics/stats/11/2017" method="post">
+        <input type="submit" class="dropdown-item " value="2017">
+        </form>
+                <form action="http://test.adslive.com/government.co.za/statistics/stats/11/2018" method="post">
+        <input type="submit" class="dropdown-item active" value="2018">
+        </form>
+               
+        
+      </div>
+</div>
+</h3>
+<hr><br>
+<div class="row"> 
+                    <!--First column-->
+                    <div class="col-md-3 mb-1">
+                        <!--Card-->
+                        <div class="card card-cascade cascading-admin-card">
+
+                            <!--Card Data-->
+                            <div class="admin-up">
+                                <i class="fa  fa-television  blue darken-2"></i>
+                                <div class="data">
+                                    <p> PROFILE VIEWS</p> 
+                                    <h6><div id="div1" ng-repeat="x in get_profile_views_company">
+	 
+	   								{{x.profile_views}}
+	                              </div>
+                                 
+                                                        </h6></div>
+                            </div>
+                            <!--/.Card Data-->
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <!--Text-->
+                                <p class="card-text" style="padding: 10px">The total amount of company profile views.</p>
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                    <!--/First column-->
+
+                    <!--Second column-->
+                    <div class="col-md-3 mb-1">
+                        <!--Card-->
+                        <div class="card card-cascade cascading-admin-card">
+
+                            <!--Card Data-->
+                            <div class="admin-up">
+                                <i class="fa fa-hand-pointer-o blue darken-2"></i>
+                                <div class="data">
+                                    <p> ADVERT CLICKS</p>
+                             <h6><div id="div2" ng-repeat="x in get_advert_views_company">
+	       						{{x.advert_views}}
+	                         </div>
+                                    </h6>
+                                </div>
+                            </div>
+                            <!--/.Card Data-->
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <!--Text-->
+                                <p class="card-text" style="padding: 10px">The total amount of advert views on this website.</p>
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                    <!--/Second column-->
+                    <!--Third column-->
+                    <div class="col-md-3 mb-1">
+                        <!--Card-->
+                        <div class="card card-cascade cascading-admin-card">
+
+                            <!--Card Data-->
+                            <div class="admin-up">
+                                <i class="fa fa-desktop blue darken-2"></i>
+                                <div class="data">
+                                    <p>DEVICES REACHED</p>
+                                    <h6><div id="div3" ng-repeat="x in get_pcs_reached">
+	 								{{x.visits}}
+	 
+	  							</div>  </h6>
+                                </div>
+                            </div>
+                            <!--/.Card Data-->
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <!--Text-->
+                                <p class="card-text" style="padding: 10px">People that are reached by this website in 2018.</p>
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                    <!--/Third column-->
+
+                    <!--Fourth column-->
+                    <div class="col-md-3 mb-1">
+                        <!--Card-->
+                        <div class="card card-cascade cascading-admin-card">
+
+                            <!--Card Data-->
+                            <div class="admin-up">
+                                <i class="fa fa-group blue darken-2"></i>
+                                <div class="data">
+                                    <p>NEW VISITORS</p>
+                                    <h6> <div id="div4" ng-repeat="x in get_new_visits">
+	 
+	 									{{x.new_visits}}
+	  								</div></h6>
+                                </div>
+                            </div>
+                            <!--/.Card Data-->
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <!--Text-->
+                                <p class="card-text" style="padding: 10px">The number of new visitors this month.</p>
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                    <!--/Fourth column-->
+					
+                </div>
+			
+                <br><strong style="font-size: 24px; color: #333;">
+                General Statistics </strong><br><hr>
+                <div class="row mb-1"> 
+                
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3> 
+                      		<div id="div5" ng-repeat="x in get_listing_count">
+	 						{{x.counts}}
+	 
+	 					</div>
+                        
+                       </h3>
+                        <p>Company Listings
+						</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3><div id="div6" ng-repeat="x in get_subscribers_count">{{x.counts}}</div></h3>
+                        <p>Subscribers 
+						</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3>
+                        <div id="div7" ng-repeat="x in get_companies_views">{{x.profile_views}}</div>
+                       </h3>
+                        <p>Company Views
+						</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3><div id="div8" ng-repeat="x in get_listing_count">{{x.counts}}</div>
+                       	</h3>
+                        <p>Online Directory Views
+						</p>
+                    </div>
+
+                </div>
+
+            </div>
+            <hr>
+            <br>
+            <div class="card mb-r"> 
+                <div class="card-block" style="padding: 25px">
+                     		<div id="div9">
+            <strong style="font-size: 24px; color: #333;">
+                Browser Traffic for this website 2018</strong><br><br>
+           
+                           
+                                <table class="table large-header">
+                                    <thead>
+                                        <tr>
+                                            <th>Browser</th>
+                                            <th>Visits</th>
+                                            <th>Frequent Version</th>
+                                        </tr>
+                                    </thead>
+                                     <tbody>
+                                     
+                                     
+                                      		<tr ng-repeat="x in browser_ajax_stats">
+												<td>{{x.browser}}</td>
+												<td>{{x.visits}}</td>
+												<td>{{x.browser_version}}																						</td>
+
+											</tr>
+                                        		
+                                                                                     
+                                    </tbody>
+                                 </table>
+                          
+     
+     </div></div></div>
+		<br> 
+	 
+<section class="section">
+
+                <!--Main row-->
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <!--Card-->
+                        <div class="card card-cascade narrower">
+
+                            <!--Admin panel-->
+                            <div class="admin-panel">
+
+                                <!--First row-->
+                                <div class="row mb-0">
+
+                                    <!--First column-->
+                                    <div class="col-md-5">
+
+                                        <!--Panel title-->
+                                        <div class="view left" style="background-color:#018C63 ;color: white;">
+                                            <h2 style="color:#000 "> Visits by Browser
+											</h2>
+                                        </div>
+   
+										<!--Panel data-->
+                                        <div class="col-md-12" style="margin-top: 20px;margin-bottom: 30px">
+                        
+                                <center ng-Controller="HomeController"> <div id="donutchart" style="width:auto; height: 300px;"></div></center>
+                            
+                        
+
+                    </div>
+					
+                                        <!--/Panel data-->
+                                    </div>
+                                    <!--/First column-->
+
+                                    <!--Second column-->
+                                   <div class="col-md-7">
+                                        <!--Cascading element-->
+                                        <div class="view right mb-r" style="background:#028B62" >
+                                            <!--Main chart-->
+                                            <h5>Profiles Viewed</h5>
+											
+											
+                                 <center><div id="columnchart_values12" style="width:100%; height: 300px;border-radius:5px;"></div> </center>
+                                           
+
+										</div>
+
+                                        <!--/Cascading element-->
+                                    </div>
+                                    <!--/Second column-->
+                                    <!-- Button trigger modal -->
+
+                                </div>
+                                <!--/First row-->
+
+                            </div>
+                            <!--/Admin panel-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+
+                </div>
+             <!--/Main row-->
+
+            </section>
+
+		<strong style="font-size: 24px; color: #333;">
+                Monthly Report for <div class="btn-group">
+    <button class="btn btn-default btn dropdown-toggle waves-effect waves-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                        November            </button>
+    <div class="dropdown-menu">
+        
+        
+             
+                                                                                                               
+        <form action="http://test.adslive.com/government.co.za/statistics/stats/1/2018" method="post">
+        <input type="submit" class="dropdown-item " value="January">
+        </form>
+        
+                                                                                                              
+        <form action="http://test.adslive.com/government.co.za/statistics/stats/2/2018" method="post">
+        <input type="submit" class="dropdown-item " value="February">
+        </form>
+        
+                                                                                                              
+        <form action="http://test.adslive.com/government.co.za/statistics/stats/3/2018" method="post">
+        <input type="submit" class="dropdown-item " value="March">
+        </form>
+        
+                                                                                                              
+        <form action="http://test.adslive.com/government.co.za/statistics/stats/4/2018" method="post">
+        <input type="submit" class="dropdown-item " value="April">
+        </form>
+        
+                                                                                                              
+        <form action="http://test.adslive.com/government.co.za/statistics/stats/5/2018" method="post">
+        <input type="submit" class="dropdown-item " value="May">
+        </form>
+        
+                                                                                                              
+        <form action="http://test.adslive.com/government.co.za/statistics/stats/6/2018" method="post">
+        <input type="submit" class="dropdown-item " value="June">
+        </form>
+        
+                                                                                                              
+        <form action="http://test.adslive.com/government.co.za/statistics/stats/7/2018" method="post">
+        <input type="submit" class="dropdown-item " value="July">
+        </form>
+        
+                                                                                                              
+        <form action="http://test.adslive.com/government.co.za/statistics/stats/8/2018" method="post">
+        <input type="submit" class="dropdown-item " value="August">
+        </form>
+        
+                                                                                                              
+        <form action="http://test.adslive.com/government.co.za/statistics/stats/9/2018" method="post">
+        <input type="submit" class="dropdown-item " value="September">
+        </form>
+        
+                                                                                                              
+        <form action="http://test.adslive.com/government.co.za/statistics/stats/10/2018" method="post">
+        <input type="submit" class="dropdown-item " value="October">
+        </form>
+        
+                                                                                                              
+        <form action="http://test.adslive.com/government.co.za/statistics/stats/11/2018" method="post">
+        <input type="submit" class="dropdown-item active" value="November">
+        </form>
+        
+              
+        
+
+        </div>
+</div> 2018</strong><br>
+<hr><div class="row mb-1"> 
+                
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3> 
+                        <div id="div10" ng-repeat="x in Advertsviewed">{{x.advert_views}}</div>
+                       </h3>
+                        <p>Adverts viewed
+						</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3><div id="div11" ng-repeat="x in ReturnedVisits">{{x.visits}}</div>
+                       
+                       </h3>
+                        <p>Returned Visits
+						</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3><div id="div12" ng-repeat="x in ProfileViews">{{x.profile_views}}</div></h3>
+                        <p>Profile Views
+						</p>
+                    </div>
+
+                </div>
+                <div class="col-3">
+
+                    <div class="data-card text-center">
+                        <h3><div id="div13" ng-repeat="x in people_reached1">{{x.people_reached}}</div></h3>
+                        <p>Devices Reached
+						</p>
+                    </div>
+
+                </div>
+
+            </div><hr><br>
+            <!-- Section: data tables -->
+            <br><br>
+            
+            <div id="div14" style="height:500px;overflow-y:scroll;">
+		
+		<table class="table table-bordered">
+	<thead class="thead-dark" style="background-color:#222;color:white;">
+<tr>
+<th>Flag</th><th>Country</th><th>New Visits</th><th>Returned Visits</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="x in visits_by_country1 |filter: search">
+<td><img src="{{x.img}}" style="height:25px;width:50px;"/> </td><td>{{x.country}}</td><td>{{x.total}}</td><td>{{x.total2}}</td>
+</tr>
+
+</tbody>
+</table>
+		
+			</div>
+        </div>
+
+    </main>
+
+   
+
+
+
+
+
+
+</script>
+        
+         
+ <script type = "text/ng-template" id ="personal.htm">
+            <h2> Personal Phonebook </h2>
+            {{message}}
+		
+ </script>
+      
+ <script type = "text/ng-template" id ="business.htm">
+            <h2> Business Phonebook </h2>
+            {{message}}
+		
+ </script> 
+         
+ <script type = "text/ng-template" id ="view.htm">
+            <h2> View Phonebook </h2>
+          
+			  <table class="table table-bordered">
+
+<tbody>
+<tr>
+<td>NAME:</td><td>{{name}}</td>
+</tr>
+<tr>
+<td>NUMBER:</td><td>{{number}}</td>
+</tr>
+<tr>
+<td>CATEGORY:</td><td>{{category}}</td>
+</tr>
+<tr>
+<td>STATUS:</td><td>{{status}}</td>
+</tr>
+
+</tbody>
+</table>	  
+		
+ </script> 
+								
+<script type = "text/ng-template" id ="add.htm">
+<h2> Add Stats </h2>
+       
+<form ng-submit="add()" class="card">	   
+    <table class="table table-bordered">
+
+       <tbody>
+       <tr>
+       <td>WEBSITE ID:</td><td>
+           <input type="text" class="form-control" ng-model="website_id"></td>
+       </tr>
+	   
+       <tr>
+       <td>HOW MANY:</td><td> <input type="text" class="form-control" ng-model="ip"></td>
+       </tr>
+	   
+       <tr>
+       <td>COMPANY ID:</td><td> <input type="text" class="form-control" ng-model="company_ad_visited"></td>
+       </tr>
+	   
+       <tr>
+       <td>AD TYPE:</td>
+       <td> 
+
+
+<select class="browser-default custom-select"  style="width:100%" ng-model="ad_type">
+  <option value="advert">advert</option>
+  <option value="classified">classified</option>
+  <option value="promotion_classified">promotion_classified</option>
+</select>
+
+       </td>
+       </tr>
+	   
+       <tr>
+       <td>MONTHS:</td>
+       <td> 
+       <select class="browser-default custom-select"  style="width:100%" ng-model="months">
+         <option value="1">ONE MONTH</option>
+         <option value="2">12 MONTHS</option>
+       </select>
+       </td>
+       </tr>
+	   
+       <tr>
+       <td>Timestamp:</td><td> <input type="date" class="form-control" ng-model="timestamp"></td>
+       </tr>
+       <tr><td></td><td>   <button type="submit" class="btn btn-primary">Submit</button> {{error}}	</td>
+       </tr>
+
+       </tbody>
+   </table>
+
+</form>
+	
+</script>
+ 	
+
+       		
+       																								
+       																																																																				
+<script type ="text/ng-template" id="add2.htm">
+<h2> Add Stat Tracker </h2>
+       
+<form ng-submit="add2()" class="card">	   
+   <table class="table table-bordered">
+     <tbody>
+       <tr>
+       <td>WEBSITE ID:</td><td>
+           <input type="text" class="form-control" ng-model="website_id"></td>
+       </tr>
+	   
+       <tr>
+       <td>HOW MANY:</td><td> <input type="text" class="form-control" ng-model="ip"></td>
+       </tr>
+	   
+       <tr>
+       <td>COMPANY ID:</td><td> <input type="text" class="form-control" ng-model="company_ad_visited"></td>
+       </tr>
+	   
+       <tr>
+       <td>AD TYPE:</td>
+       <td> 
+     <select class="browser-default custom-select"  style="width:100%" ng-model="ad_type">
+  <option value="advert">advert</option>
+  <option value="classified">classified</option>
+  <option value="promotion_classified">promotion_classified</option>
+</select>
+       </td>
+       </tr>
+	   
+       <tr>
+       <td>MONTHS:</td>
+       <td> 
+       <select class="browser-default custom-select"  style="width:100%" ng-model="months">
+         <option value="1">ONE MONTH</option>
+         <option value="2">12 MONTHS</option>
+       </select>
+       </td>
+       </tr>
+	   
+       <tr>
+       <td>Timestamp:</td><td> <input type="date" class="form-control" ng-model="timestamp"></td>
+       </tr>
+       <tr><td></td><td>   <button type="submit" class="btn btn-primary">Submit</button> {{error}}	</td>
+       </tr>
+
+     </tbody>
+  </table>
+
+</form>
+	
+</script>
+
+ 
+<script type="text/ng-template" id="add3.htm">
+<h2> Add Stat Ad Shown </h2>
+       
+<form ng-submit="add3()" class="card">	   
+   <table class="table table-bordered">
+     <tbody>
+          <tr>
+          <td>WEBSITE ID:</td>
+		  <td><input type="text" class="form-control" ng-model="website_id"></td>
+          </tr>
+		  
+          <tr>
+          <td>HOW MANY:</td><td> <input type="text" class="form-control" ng-model="ip"></td>
+          </tr>
+		  
+          <tr>
+          <td>COMPANY ID:</td><td> <input type="text" class="form-control" ng-model="company_ad_visited"></td>
+          </tr>
+
+          <tr>
+          <td>MONTHS:</td>
+          <td> 
+            <select class="browser-default custom-select"  style="width:100%" ng-model="months">
+         <option value="1">ONE MONTH</option>
+         <option value="2">12 MONTHS</option>
+       </select>
+          </td>
+          </tr>
+		  
+          <tr>
+          <td>Timestamp:</td><td> <input type="date" class="form-control" ng-model="timestamp"></td>
+          </tr>
+          <tr><td></td><td>   <button type="submit" class="btn btn-primary">Submit</button> {{error}}	</td>
+          </tr>
+
+       </tbody>
+    </table>
+
+</form>
+	
+ </script>
+
+
+    <script type="text/javascript" src="https://mdbootstrap.com/live/_MDB/templates/Admin/js/jquery-3.1.1.min.js"></script>
+
+    <!-- Bootstrap dropdown -->
+    <script type="text/javascript" src="https://mdbootstrap.com/live/_MDB/templates/Admin/js/popper.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://mdbootstrap.com/live/_MDB/templates/Admin/js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://mdbootstrap.com/live/_MDB/templates/Admin/js/mdb.min.js"></script>
+    
+    <!-- Customizer -->
+    <script type="text/javascript" src="https://mdbootstrap.com/live/_MDB/js/customizer.min.js"></script>
+
+</body>
+</html>

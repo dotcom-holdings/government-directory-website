@@ -1,0 +1,1374 @@
+@import "normalize"
+
+/* Table of contents
+===============================================================
+- Grid
+- Base Styles
+- Typography
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+- Utilities
+- Clearing
+- Media Queries
+*/
+
+/* Grid
+=============================================================== */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  .container {
+    width: 80%; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
+}
+
+
+/* Base Styles
+=============================================================== */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
+
+
+/* Typography
+=============================================================== */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300; }
+h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 { font-size: 5.0rem; }
+  h2 { font-size: 4.2rem; }
+  h3 { font-size: 3.6rem; }
+  h4 { font-size: 3.0rem; }
+  h5 { font-size: 2.4rem; }
+  h6 { font-size: 1.5rem; }
+}
+
+p {
+  margin-top: 0; }
+
+
+/* Links
+=============================================================== */
+a {
+  color: #1EAEDB; }
+a:hover {
+  color: #0FA0CE; }
+
+
+/* Buttons
+=============================================================== */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0; }
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #33C3F0;
+  border-color: #33C3F0; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB; }
+
+
+/* Forms
+=============================================================== */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0; }
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; }
+fieldset {
+  padding: 0;
+  border-width: 0; }
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal; }
+
+
+/* Lists
+=============================================================== */
+ul {
+  list-style: circle inside; }
+ol {
+  list-style: decimal inside; }
+ol, ul {
+  padding-left: 0;
+  margin-top: 0; }
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+li {
+  margin-bottom: 1rem; }
+
+
+/* Code
+=============================================================== */
+code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px; }
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; }
+
+
+/* Tables
+=============================================================== */
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+
+
+/* Spacing
+=============================================================== */
+button,
+.button {
+  margin-bottom: 1rem; }
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2.5rem; }
+
+
+/* Utilities
+=============================================================== */
+.full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.pull-right {
+  float: right; }
+.pull-left {
+  float: left; }
+
+
+/* Misc
+=============================================================== */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+
+
+/* Clearing
+=============================================================== */
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.cf, .clearfix {
+  content: "";
+  display: table;
+  clear: both; }
+
+
+body
+	color #333
+
+ul
+	list-style none
+	padding 0
+	margin 0
+
+ul.list 
+	list-style square
+	margin 0 0 15px 15px
+
+li
+	margin 0
+
+a, a:visited
+	color #657EAB
+	text-decoration none
+
+.button
+	background: #3f5f98
+	color: white !important
+	font-weight: bold
+	padding: 5px 10px
+
+#notify
+	border: 5px solid #C6D880
+	background: #E6EFC2
+	color: #264409
+	min-height: 20px
+	min-width: 300px
+	position: fixed
+	top: 50%
+	left: 50%
+	z-index: 10001
+	margin: -20px 0 0 -150px
+
+	p
+		padding 10px
+		margin 0
+
+
+/* auto complete */
+.ui-autocomplete
+	height: 300px
+	overflow: scroll
+	
+	li a
+		background: none
+		border: none
+		font-size: 11px
+		cursor: pointer
+
+	li a:hover
+		background: none
+		border: none
+
+/* colors */
+.color
+	padding: 0px 8px
+	margin-right: 5px
+
+.color.green
+	background-color: #09a879
+
+.color.maroon
+	background-color: #965ad9
+
+.color.yellow
+	background-color: #ebcd41
+
+.color.pink
+	background-color: #dc6a7d
+
+.color.orange
+	background-color: #f98221
+
+:focus
+	outline none
+
+/* TOPMENU 
+============================================== */
+#topmenu
+	background: #3d6384
+	padding-top 1px
+
+	#support
+		display: block
+		margin-top: 7px
+		margin-bottom: 7px
+		color white
+		text-align center
+
+	#usermenu
+		margin-top: 7px
+		margin-bottom: 7px
+		list-style: none
+		text-align center
+
+		ul
+			padding 0
+			margin 0
+
+		li
+			display inline-block
+			padding 0 10px
+
+		li.signup
+			border-left: 1px solid #90b0cc
+
+	a
+		color: white
+
+	i
+		font-size: 18px
+
+	i.fa-caret-down
+		font-size: 14px
+		margin-left: 3px
+
+	.has-dropdown > a
+		display: block
+		cursor: pointer
+		padding: 0 5px
+		
+		#dropdown
+			background: white
+			position: absolute
+			right: 0
+			border-radius: 3px
+			z-index: 102
+			min-width: 150px
+			display: none
+			box-shadow: 0 1px 1px 1px rgba(0,0,0,.2)
+			
+			a
+				color: #333
+				display: block
+				padding: 5px 10px
+				border-bottom: 1px solid #eee
+			
+			a:hover
+				color: #888
+
+/* SITE NAVIGATION */
+#site-navigation
+	border-bottom: 1px solid #eee
+	padding 0
+		
+	ul
+		overflow: hidden
+		margin: 10px 0
+
+		li
+			display block
+			margin 0
+			
+		li a
+			display block
+			padding 7px 10px
+			text-transform: uppercase
+			font-weight: 600
+
+		li a:hover, li.active a
+			cursor: pointer
+			background #eaeaea
+
+	#social
+		margin 10px 0
+		text-align center
+
+		a
+			font-size 18px
+			margin-left 8px
+			background #3f5f98
+			color white
+			padding 5px
+			text-align center
+			width 36px
+			box-sizing border-box
+			display inline-block
+		
+		a.linkedin
+			background-color #4875B4
+		
+		a.twitter
+			background-color #33CCFF
+		
+		a.facebook
+			background-color #3B5998
+
+/* SITE HEADER 
+================================================ */
+#site-header
+	margin: 0
+	overflow: hidden
+	background: #e2f2ff
+	padding: 20px 0
+	border-bottom: 5px solid #d6e8f8
+	
+	#logo
+		text-align center
+
+	#search-box
+		margin 20px 0 0 0
+		
+		form
+			margin 0
+
+		input
+			font-size 16px
+			border-radius 0
+			padding-left 30px
+			border-color #c1d7ea
+			box-shadow none
+			box-sizing border-box
+			width 100%
+				
+		.what input
+			background: #FFF url(../img/search.png) no-repeat 10px center
+
+		.where input
+			background: #FFF url(../img/location.png) no-repeat 10px center
+
+		button
+			box-sizing border-box
+			border-radius 0
+			background #3f5e9e
+			border-color #3f5e9e
+			color white
+			text-transform uppercase
+			width 100%
+			margin 0
+
+/* CONTENT
+============================================= */
+#content
+	min-height: 700px
+
+	#middle-column
+		#slideshow
+			margin 20px 0
+			padding 15px
+			border 1px solid #b8d8f1
+			overflow hidden
+
+			img
+				margin 0 0 20px 0
+				display block
+
+			.caption
+				padding: 0
+				
+				h2
+					margin: 0 0 5px 0
+
+				p
+					margin: 0
+
+		#news
+			border-bottom: 1px solid #ccc
+			margin: 15px 0
+			padding-bottom 10px
+
+			h2
+				color #8cab0f
+				font-weight bold
+				font-size 30px
+				margin 0 0 10px 0
+
+			ul
+				overflow: hidden
+
+			li
+				margin: 10px 0
+				overflow hidden
+
+			img
+				float: left;
+				margin-right: 10px;
+
+			a:hover
+				text-decoration underline
+
+		#tips
+			padding: 0
+			
+			h2
+				color: #3a609e
+				font-weight: bold
+				font-size 30px
+				
+			ul
+				margin-left: 15px
+				list-style: disc
+				
+			li
+				padding: 2px 0
+
+			a
+				color: #555
+
+			a:hover
+				color: #222
+
+	#left-column
+		box-sizing border-box
+
+		#categories
+			#title
+				margin 15px 0px
+
+				h3
+					margin: 12px 0 0 0
+					font-weight: bold
+					color: #3f5f98
+					font-size 24px
+				
+			#scrollpane
+				background: #f3f3f3
+				margin-bottom: 20px
+				position: relative
+				height: 560px
+				overflow: auto
+				width 100%
+			
+			ul
+				padding: 10px
+
+			li
+				padding 5px 0
+				margin 0
+
+			li a
+				padding 0
+				color #4C4C4C
+				font-size: 12px
+
+			li a:hover
+				text-decoration: none
+
+	#right-column
+		margin-top 20px
+
+		img
+			border: 1px solid #ccc
+			display: block
+
+		article#featured
+			margin-top 20px
+			position relative
+			padding 1px 0 0 0
+
+			h5
+				color #3a609e
+				position absolute
+				top 0
+
+			a
+				margin-top: 3px
+				display: block
+			
+			.image
+				margin-top 80px
+				height 100px
+				overflow hidden
+				position relative
+				margin-bottom 5px
+
+			img
+				width: 100%
+				position absolute
+				top -1px
+				left -1px
+
+		.banners img
+			margin: 10px 0
+
+		#search
+			margin-bottom: 30px
+			padding: 0
+			
+			input[type="text"]
+				width: 550px
+
+			img
+				border: none !important
+
+			img#middle-image
+				margin: 0 6px
+
+	#gif-banners
+		margin: 20px 0 0 0
+		
+		img
+			margin-right: 10px
+			display: inline-block
+			border: 1px solid #333
+
+	#sub-footer
+		#articles
+			margin-top 20px
+			padding 0
+			color #777
+			border 1px solid #ccc
+
+			article
+				padding: 20px
+				
+				h5
+					margin-bottom 1px
+					color #3a609e
+
+				.image
+					margin-bottom 10px
+					text-align center
+
+				img
+					border: 1px solid #ccc
+					display: inline-block
+
+				a
+					margin-bottom: 5px
+					display block
+				
+				a:hover
+					text-decoration underline
+
+		aside
+			margin-top: 20px
+
+			.banners
+				img
+					border 1px solid #ccc
+					display block
+					margin 0 0 20px 0
+
+			#popular-articles
+				border 1px solid #88a906
+
+				h4
+					background #88a906
+					padding 5px 10px
+					margin 0
+					color white
+					font-weight bold
+					font-size 24px
+
+				ul 
+					padding 10px 15px
+
+					li
+						padding 2px 0
+
+					a
+						text-decoration none
+					
+					a:hover
+						text-decoration underline
+				
+
+/* LISTVIEW
+============================================= */
+.list-view 
+	.view
+		border-bottom: 1px solid #f2f2f2;
+		margin-bottom: 10px;
+		display: block;
+		padding: 10px 0;
+		min-height: 90px;
+		position: relative;
+
+		img
+			top: 10px;
+			right: 10px;
+			position: absolute;
+			border: 1px solid #E3E3E3;
+			background: white;
+			padding: 3px;
+			box-shadow: rgba(0, 0, 0, 0.1) 0 0 2px 0px;
+			border-radius: 2px
+
+		.footer 
+			clear: both
+			margin: 0
+			padding: 0
+			overflow: hidden
+			
+			i
+				margin-right: 3px;
+				font-size: 14px;
+			a
+				text-decoration: none;
+				margin-right: 15px;
+				color: #666;
+
+			i.fa-map-marker
+				font-size: 16px;
+				
+			i.fa-mobile
+				font-size: 21px;
+				vertical-align: bottom;
+
+			.icons 
+				float: right
+
+				a
+					padding: 0 5px
+					color: #555
+
+				span
+					padding: 0;
+					margin: 0;
+					width: 14px;
+					height: 14px;
+					overflow: hidden;
+					display: inline-block;
+					vertical-align: text-bottom;
+
+				.saveit
+					background-position: -45px -33px;
+
+				.likeit
+					background-position: 0px -18px;
+				
+				.sendit
+					background-position: -31px -33px;
+
+		h4
+			font-size: 14px;
+			font-weight: bold
+			padding: 0
+			margin: 0
+
+		h4.short
+			padding-right: 160px
+			
+		address
+			margin: 10px 0
+			line-height: 18px
+			font-size: 12px
+
+		address.short
+			padding-right: 160px
+
+	.summary
+		display: inline
+
+/* RESULT
+============================================= */
+#query h2 {margin: 5px 0;}
+#result {margin: 20px 0 0 0;min-height: 500px;position: relative;}
+#result h2 {font-size: 22px; font-style: italic;}
+#result p {margin: 5px 0; }
+#result .list-view {}
+#result .view {padding: 10px 0;border-top: 1px dotted #ccc;border-bottom: 1px dotted #ccc;margin-top: -1px;color: #4C4C4C;}
+#result .prioritize, .highlight { background-color: #eee; }
+#result .logo {margin: 0 10px 0 0;background: #ccc;padding: 5px;}
+#result .view h3 {margin: 0;padding: 0;}
+#result .view span, #result .view p {padding: 2px 0;font-size: 11px;}
+#result .view strong {color: #8CC00F;font-weight: normal;}
+#result .view p {margin: 0 10px;}
+#result .view h3 a {font-weight: bold;font-size: 15px;}
+#result .pager {margin: 20px 0;}
+#result a {color: #474747;font-weight: normal;font-size: 12px;border-color: #e0e0e0;}
+#result a:hover {border-color: #ffba00;color: #000;font-weight: bold;}
+#result .pager a:hover {border-color: #ffba00;background: #ffba00;color: #000;font-weight: bold;}
+#result .pager .selected a {border-color: #ffba00;background: #ffba00;color: #000;font-weight: bold;}
+
+/* VIEWPAGE
+============================================= */
+.viewpage
+	color: #3f5e9e
+	margin: 20px 0 0 0
+	
+	img.map
+		width 100%
+
+	a
+		color: #3f5e9e;
+		text-decoration: none;
+
+	#details
+		padding: 10px
+		min-height: 440px
+		background: #f2f2f2
+
+		img
+			border: 1px solid #3f5e9e
+			margin: 0 10px 10px 0
+
+	h1
+		margin: 20px 0 5px 0
+		color: #3f5e9e
+		font-size 36px
+		font-weight bold
+	
+	ul
+		margin: 0 0 20px 0
+	
+	ul li
+		padding: 5px 0
+
+	b
+		color: #666
+		padding-right: 3px
+
+	i
+		margin-right: 3px
+		font-size: 14px
+
+	i.fa-map-marker
+		font-size: 16px
+
+	i.fa-mobile
+		font-size: 21px
+		vertical-align: bottom
+
+	.footer
+		background: #f2f2f2
+		padding: 15px
+		margin: 3px 0 10px 0
+		
+		a
+			margin-right: 15px
+			color: #666
+
+
+/* SIDEBAR
+============================================= */
+#sidebar
+	min-height: 600px
+
+/* SITE FOOTER
+============================================= */
+#site-footer
+	min-height 70px
+	margin 20px 0 0 0
+	padding 20px 0
+	background #f3f3f3
+	border-top 5px solid #e5e5e5
+	text-align center
+	
+	#join-us
+		text-align center
+		margin 0
+	
+	#links a
+		color #666
+		text-decoration none
+
+
+/* channel */
+.channel
+	padding 20px 0
+	overflow hidden
+
+	ul
+		list-style: none
+		padding: 0
+		margin: 0
+
+	li
+		margin: 0 10px 10px 0;
+		display: block; 
+		float: left;
+		width: 150px;
+		height: 150px;
+		text-align: center;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		padding: 10px 7px;
+		position: relative;
+		cursor: pointer;
+
+	li.last
+		margin-right 0 !important
+	
+	li:hover span
+		background: url('../img/play.png') no-repeat 0 -48px
+
+	li span
+		background: url('../img/play.png') no-repeat 0 0;
+		width: 48px;
+		height: 48px;
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		margin: -50px 0 0 -24px;
+
+	a
+		text-decoration: none
+
+.error-page
+	margin-top: 20px
+
+	h1
+		font-size: 30px
+		border-bottom: 1px solid #e0e0e0
+		padding: 0 0 5px 0
+
+	p
+		font-size: 13px
+		line-height: 20px
+
+/* ERRORS, MESSAGES */
+.flash-error, .flash-notice, .flash-success
+	padding: .8em
+	margin-bottom: 1em
+	border: 1px solid #ddd
+
+.flash-error
+	background: #FBE3E4
+	color: #8a1f11 !important
+	border-color: #FBC2C4
+	
+	a 
+		color: #8a1f11
+
+.flash-notice
+	background: #FFF6BF
+	color: #514721
+	border-color: #FFD324
+	
+	a
+		color: #514721
+
+.flash-success
+	background: #E6EFC2
+	color: #264409
+	border-color: #C6D880
+	
+	a
+		color: #264409
+
+.breadcrumbs
+	font-size: 11px
+	padding: 0px 0
+
+	span
+		font-weight: bold
+
+/* forms */
+.form
+	input, textarea, select
+		margin: 0.2em 0 0.5em 0
+
+	fieldset
+		border: 1px solid #DDD
+		padding: 10px
+		margin: 0 0 10px 0
+		border-radius: 7px
+
+	label
+		font-weight: bold
+		font-size: 0.9em
+		display: block
+
+	.row
+		margin: 5px 0
+	
+	.hint
+		margin: 0
+		padding: 0
+		color: #999
+
+	.note
+		font-style: italic
+
+	span.required
+		color: red
+	
+	.rememberMe label
+		display: inline
+
+	.errorSummary
+		border: 1px solid #C00;
+		padding: 5px 10px
+		margin: 0 0 20px 0
+		background: #FEE
+		color: #333
+
+	.errorMessage
+		color: red
+		font-size: 0.9em
+
+	.errorSummary p
+		margin: 0;
+		padding: 5px;
+
+	.errorSummary ul 
+		margin: 0;
+		padding: 0;
+/*
+	.error label:first-child, label.error, span.error
+		color: #C00;
+	
+	.error
+		input, textarea, select, input.error, textarea.error, select.error
+			background: #FEE
+			border-color: #C00
+
+	.success 
+		input, textarea, select, input.success, textarea.success,select.success
+			background: #E6EFC2
+			border-color: #C6D880
+			width: 300px
+			padding: 10px
+*/
+
+.wide.form 
+	label
+		float: left
+		margin-right: 10px
+		position: relative
+		text-align: right
+		width: 100px
+		font-size: 18px
+		padding: 5px
+
+	.row
+		clear left
+		margin 0 10px 0 0
+
+	.buttons, .hint, .errorMessage
+		clear left
+		padding-left 110px
+
+/* TERMS AND CONDITION
+====================================================== */
+#terms
+	h2
+		margin: 0
+		border: none
+		font-size: 24px
+		color: #706330
+		border-bottom: 2px solid #555
+		padding: 0 5px
+		font-weight: bold
+	
+	ol
+		margin: 20px
+		font-size: 16px
+	
+	li
+		padding: 10px 0
+
+@import "scrollpane"
+@import "colorbox"
+
+/* Media Queries
+=============================================================== */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px)
+	.container
+		width 1100px
+		max-width 1100px
+	
+	/* TOPMENU */
+	#topmenu
+		#support
+			float left
+			text-align center
+
+		#usermenu
+			float right
+			text-align center
+
+	/* SITE HEADER */
+	#site-header
+		#logo
+			width 350px
+			float left
+			text-align left
+		
+		#search-box
+			width 650px
+			float right
+			margin-top 10px
+			
+			input[type="text"]
+				width 265px
+				float left
+				margin 0 10px 0 0
+			
+			button
+				width 100px
+				box-sizing border-box
+				padding 0 10px
+
+	/* SITE NAVIGATION */
+	#site-navigation
+		ul
+			float left
+			margin-left 250px
+
+			li
+				float left
+
+			li a:hover, li.active a
+				background white
+
+		#social
+			float right
+			text-align right
+
+	#content
+		#left-column
+			width 238px
+			float left
+			position relative
+			top -61px
+		
+		#middle-column
+			width 520px
+			float left
+			margin 0 20px
+			
+			#slideshow
+				padding 15px
+
+				img
+					margin 0 15px 0 0
+					float left
+
+				.caption
+					padding 0
+					
+					h2
+						margin: 0 0 5px 0
+						font-size 24px
+
+					p
+						margin: 0
+			
+		#right-column
+			width 302px
+			float left
+	
+	#sub-footer
+		@extend .cf
+
+		#sidebar
+			width 302px
+			float left
+		
+		#articles
+			width 776px
+			float left
+			margin-right 20px
+			padding-bottom 20px !important
+
+			article
+				padding 20px 20px 0 20px !important
+				overflow hidden
+				
+				.image
+					margin 0
+					text-align left
+					
+				img
+					width 120px
+					float left
+					margin-right 20px
+	
+	.viewpage
+		color: #3f5e9e
+		margin: 20px 0 0 0
+
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}

@@ -1,0 +1,131 @@
+.topnav_stat {
+	padding: 37px 20px;
+}
+#content {
+	color: #1c1c1e;
+}
+span.month {
+	font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1c1c1e;
+}
+/*#intro {
+    padding: 20px 0px;
+}
+#stats {
+    padding: 20px 0px;
+	text-align: center;
+}*/
+#donutchart {
+    padding: 20px 0px;
+}
+
+#browsers {
+    padding: 20px 0px;
+    width: 118%;
+	text-align: center;
+}
+#countries {
+    padding: 20px 0px;
+}
+.country_list {
+	list-style: none;
+}
+#clickratio {
+    padding: 20px 0px 40px 0px;
+}
+#chart_div {
+	width:inherit;
+	height:inherit;
+}
+.stats-page-border {
+	/*border: 1px solid #131313;*/
+    border-radius: 5px;
+    margin: 8% 1% 4% 1%;
+    padding: 1% 1% 4% 1%;
+    width: 98%;
+   /* background-color: #191e21;*/
+}
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:#009366;
+  height: 1px;
+}
+.padding {
+	margin: 20px 0px 30px 0px;
+	width: 99%; 
+}
+#page-views h3 {
+	text-align: center;
+}
+#page-views p {
+	text-align: center;
+}
+#new-visits h3 {
+	text-align: center;
+}
+#new-visits p {
+	text-align: center;
+}
+#returning-visitors h3 {
+	text-align: center;
+}
+#returning-visitors p {
+	text-align: center;
+}
+#uptime h3 {
+	text-align: center;
+}
+#uptime p {
+	text-align: center;
+}
+#business-listings h3 {
+	text-align: center;
+}
+#business-listings p {
+	text-align: center;
+}
+#site-hits h3 {
+	text-align: center;
+}
+#site-hits p {
+	text-align: center;
+}
+#browsers div div img.img-responsive {
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 360px) and (max-width: 414px) {
+.stats-page-border {
+    border: 1px solid #131313;
+    border-radius: 5px;
+    margin: 4% 0% 4% 2%;
+    padding: 1% 1% 4% 1%;
+    width: 101%;
+    background-color: #191e21;
+}
+}
+@media (min-width: 414px) and (max-width: 520px) {
+.stats-page-border {
+    border: 1px solid #131313;
+    border-radius: 5px;
+    margin: 70% 0% 4% 2%;
+    padding: 1% 1% 4% 1%;
+    width: 97%;
+    background-color: #191e21;
+}
+}
+@media (min-width: 375px) and (max-width: 414px) {
+.stats-page-border {
+    border: 1px solid #131313;
+    border-radius: 5px;
+    margin: 4% 0% 4% 2%;
+    padding: 1% 1% 4% 1%;
+    width: 93%;
+    background-color: #191e21;
+}
+}
