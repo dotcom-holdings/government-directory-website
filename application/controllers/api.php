@@ -130,4 +130,10 @@ class api extends CI_Controller
 
     }
 
+    function add_favourite($user_id, $company_id){
+        echo $user_id;
+        echo $company_id;
+        exit();
+    }
+
 }
