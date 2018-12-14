@@ -2107,4 +2107,6 @@ Class Company extends CI_Model
 		//$query = $this->db2->query('SELECT MAX( id ) AS lastid, name, address, phone, COUNT( * ) FROM companies GROUP BY name,address, phone HAVING COUNT( * ) >1');
          return 0;//$query->num_rows(); 
 	}
+
+
 }

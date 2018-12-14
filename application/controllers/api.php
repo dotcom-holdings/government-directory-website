@@ -104,6 +104,20 @@ class api extends CI_Controller
         exit;
     }
 
+    public function get_companies_by_category($id){
+        if(empty($id))
+        {
+            echo 'error occured';
+            exit();
+        }
+
+        $this->load->model('api_company');
+
+        $companies = json_encode((array) $this->api_company->get_companies_by_category($id));
+        echo $companies;
+        exit();
+    }
+
     function user($id){
 
     }
