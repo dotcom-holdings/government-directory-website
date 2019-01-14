@@ -338,17 +338,17 @@ public function get_companyid_from_user()
 	public function get_pcs_reached ($id){
 		echo $this->common->get_pcs_reached($data['get_companyid_from_user']);
 	}	
-	public function get_advert_views_month ($id,$month){
-		echo $this->common->get_advert_views_month($id,$month);
+	public function get_advert_views_month ($id,$month,$year=''){
+		echo $this->common->get_advert_views_month($id,$month,$year);
 	}	
-	public function get_returned_visits ($month){
-		echo $this->common->get_returned_visits($month);
+	public function get_returned_visits ($month,$year=''){
+		echo $this->common->get_returned_visits($month,$year);
 	}
-	public function get_profile_views_month ($data,$month){
-		echo $this->common->get_profile_views_month($data,$month);
+	public function get_profile_views_month ($data,$month,$year=''){
+		echo $this->common->get_profile_views_month($data,$month,$year);
 	}	
-	public function get_people_reached_month ($data,$month){
-		echo $this->common->get_people_reached_month($data,$month);
+	public function get_people_reached_month ($data,$month,$year){
+		echo $this->common->get_people_reached_month($data,$month,$year);
 	}	
 	
 	public function get_profile_views_month_of_year($get_companyid_from_user,$x)
@@ -384,10 +384,11 @@ public function get_companyid_from_user()
 	
 	
 	//upgrades end
-	 public function viewstat($month='',$company_id) { 
+	 public function viewstat($month='',$year='',$company_id) { 
 		 $data['user_id'] = $this->userid;
 		$data['loggedin'] = $this->loggedin==1?true:false;
 	 if(empty($month)){$month=date('m');}
+	 if(empty($year)){$year=date('Y');}
 	 $data['get_companyid_from_user'] = $company_id;
 	 $data['get_companyname_from_user'] = $this->common->get_companyname_from_user($data['get_companyid_from_user']);
 	 //$data['get_profile_views_company'] = $this->common->get_profile_views_company($data['get_companyid_from_user']);
@@ -418,6 +419,7 @@ public function get_companyid_from_user()
 	 $data['get_ie_visits'] = $this->common->get_ie_visits();
       
 	 $data['month']=$month;
+	 $data['year']=$year;
 		 
 	 $company_data = $this->common->get_company($company_id);
 	 $data['company'] = $company_data[0];
@@ -439,7 +441,7 @@ public function get_companyid_from_user()
 	 $this->load->view('view_stats_final',$data);
     } 
 	
- public function companystat($month='',$company_id) { 
+ public function companystat($company_id,$month='',$year='') { 
 		 $data['user_id'] = $this->userid;
 		$data['loggedin'] = $this->loggedin==1?true:false;
 	 if(empty($month)){$month=date('m');}

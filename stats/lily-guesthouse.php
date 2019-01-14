@@ -36,7 +36,7 @@
       <h1 style="margin-top:-10px; background-color:#000;">
       <img src="dist/img/government.png" style="height:45px;margin-top:-7px;">
       <span style="width:150px;">&nbsp;</span>
-        &nbsp; &nbsp;&nbsp;&nbsp;<b> Lily Guesthouse</b> &nbsp; - &nbsp; Visitor Stats for period 01/08/2018 - 30/11/2018
+        &nbsp; &nbsp;&nbsp;&nbsp;<b> Lily Guesthouse</b> &nbsp; - &nbsp; Visitor Stats for period 01/08/2018 - 31/12/2018
       </h1>
 
     </section>
@@ -156,7 +156,7 @@ $one = 587;
 $two = 945;
 $three = 1279;
 $four = 1751;
-$five = 0;
+$five = 2158;
 $six = 0;
 $seven = 0;
 $eight = 0;
@@ -170,19 +170,19 @@ $total_hits = round(($one*3),0)+round(($two*2.9),0)+round(($three*2.85),0)+round
                 <div class="col-md-3 col-sm-4">
                   <div class="pad box-pane-right bg-green" style="min-height: 280px">
                     <div class="description-block margin-bottom">
-                      <div class="sparkbar pad" data-color="#fff"><?=$one?>, <?=$two?>, <?=$three?>, <?=$four?></div>
+                      <div class="sparkbar pad" data-color="#fff"><?=$one?>, <?=$two?>, <?=$three?>, <?=$four?>, <?=$five?></div>
                       <h5 class="description-header"><?=$total?></h5>
                       <span class="description-text">Visits</span>
                     </div>
                     <!-- /.description-block -->
                     <div class="description-block margin-bottom">
-                      <div class="sparkbar pad" data-color="#fff"><?= round($one*7/100)?>, <?= round($two*7/100)?>, <?= round($three*7/100)?>, <?= round($four*7/100)?></div>
+                      <div class="sparkbar pad" data-color="#fff"><?= round($one*7/100)?>, <?= round($two*7/100)?>, <?= round($three*7/100)?>, <?= round($four*7/100)?>, <?= round($five*7/100)?></div>
                       <h5 class="description-header">7%</h5>
                       <span class="description-text">Referral</span>
                     </div>
                     <!-- /.description-block -->
                     <div class="description-block">
-                      <div class="sparkbar pad" data-color="#fff"><?= round($one*93/100)?>, <?= round($two*93/100)?>, <?= round($three*93/100)?>, <?= round($four*93/100)?></div>
+                      <div class="sparkbar pad" data-color="#fff"><?= round($one*93/100)?>, <?= round($two*93/100)?>, <?= round($three*93/100)?>, <?= round($four*93/100)?>, <?= round($five*93/100)?></div>
                       <h5 class="description-header">93%</h5>
                       <span class="description-text">Organic</span>
                     </div>
@@ -308,7 +308,7 @@ $(function () {
     var areaChart = new Chart(areaChartCanvas);
 
     var areaChartData = {
-      labels: ["Aug 2018", "Sep 2018", "Oct 2018", "Nov 2018"],
+      labels: ["Aug 2018", "Sep 2018", "Oct 2018", "Nov 2018", "Dec 2018"],
       datasets: [
         {
           label: "Average Hits",
@@ -318,7 +318,7 @@ $(function () {
           pointStrokeColor: "#c1c7d1",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(220,220,220,1)",
-          data: [<?=round(($one*3),0)?>, <?=round(($two*2.5),0)?>, <?=round(($three*2.85),0)?>, <?=round(($four*2.85),0)?>]
+          data: [<?=round(($one*3),0)?>, <?=round(($two*2.5),0)?>, <?=round(($three*2.85),0)?>, <?=round(($four*2.85),0)?>, <?=round(($five*2.85),0)?>]
         },
         {
           label: "Listing Hits",
@@ -328,7 +328,7 @@ $(function () {
           pointStrokeColor: "rgba(127,176,65,1)",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(127,176,65,1)",
-          data: [<?=$one?>, <?=$two?>, <?=$three?>, <?=$four?>]
+          data: [<?=$one?>, <?=$two?>, <?=$three?>, <?=$four?>, <?=$five?>]
         }
       ]
     };

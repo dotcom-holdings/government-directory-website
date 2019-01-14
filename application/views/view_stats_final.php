@@ -524,7 +524,45 @@ $(document).ready(function(){
       <?php } ?> 
 
         </div>
-</div> <?php echo date("Y") ;?></strong> <button 
+</div> 
+
+    <button class="btn btn-default btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <?php if($year===2019){echo date('Y');}else{echo date('Y')-1;}?>
+
+
+
+    </button>
+    <div class="dropdown-menu">
+        
+       <?
+        for($x=1;$x<=date("m");$x++)
+        {
+        
+        ?>
+        <?php if($x==1){$m='January';}?>
+        <?php if($x==2){$m='February';}?>
+        <?php if($x==3){$m='March';}?>
+        <?php if($x==4){$m='April';}?>
+        <?php if($x==5){$m='May';}?>
+        <?php if($x==6){$m='June';}?>
+        <?php if($x==7){$m='July';}?>
+        <?php if($x==8){$m='August';}?>
+        <?php if($x==9){$m='September';}?>
+        <?php if($x==10){$m='October';}?>
+        <?php if($x==11){$m='November';}?>
+        <?php if($x==12){$m='December';}?> 
+        
+        
+        <form action="<?php echo base_url() ?>home/viewstat/<?php echo $x; ?>/<?php echo $get_companyid_from_user;?>" method="post">
+        <input type="submit" class="dropdown-item <?php if($month==$x){echo 'active';}?>" value="<?php echo $m; ?>">
+        </form>
+        
+      <?php } ?> 
+
+        </div>
+</div>
+
+</strong> <button 
              
               title="Header"
                data-toggle="popover"
@@ -553,7 +591,7 @@ $(document).ready(function(){
 					 	<script>
 					$(document).ready(function(){
 
-							$("#div5").load("<?php echo base_url() ?>home/get_advert_views_month/<?php echo $get_companyid_from_user;?>/<?php echo $month;?>");
+							$("#div5").load("<?php echo base_url() ?>home/get_advert_views_month/<?php echo $get_companyid_from_user;?>/<?php echo $month;?>/<?php if($year===2019){echo date('Y');}else{echo date('Y')-1;}?>");
 
 					});
 					</script></h3>
@@ -570,7 +608,7 @@ $(document).ready(function(){
 					 	<script>
 					$(document).ready(function(){
 
-							$("#div6").load("<?php echo base_url() ?>home/get_returned_visits/<?php echo $month;?>");
+							$("#div6").load("<?php echo base_url() ?>home/get_returned_visits/<?php echo $month;?>/<?php if($year===2019){echo date('Y');}else{echo date('Y')-1;}?>");
 
 					});
 					</script>
@@ -588,7 +626,7 @@ $(document).ready(function(){
 					 	<script>
 					$(document).ready(function(){ 
 
-							$("#div7").load("<?php echo base_url() ?>home/get_profile_views_month/<?php echo $get_companyid_from_user;?>/<?php echo $month;?>");
+							$("#div7").load("<?php echo base_url() ?>home/get_profile_views_month/<?php echo $get_companyid_from_user;?>/<?php echo $month;?>/<?php if($year===2019){echo date('Y');}else{echo date('Y')-1;}?>");
 
 					});
 					</script> </h3>
@@ -605,7 +643,7 @@ $(document).ready(function(){
 					 	<script>
 					$(document).ready(function(){
 
-							$("#div8").load("<?php echo base_url() ?>home/get_people_reached_month/<?php echo $get_companyid_from_user;?>/<?php echo $month;?>");
+							$("#div8").load("<?php echo base_url() ?>home/get_people_reached_month/<?php echo $get_companyid_from_user;?>/<?php echo $month;?>/<?php if($year===2019){echo date('Y');}else{echo date('Y')-1;}?>");
 
 					});
 					</script> </h3>
@@ -638,7 +676,7 @@ $(document).ready(function(){
 			</div><script>
 					$(document).ready(function(){
 
-							$("#div14").load("<?php echo base_url() ?>statistics/country_ajax_stats/<?php echo $month;?>/<?php echo $year;?>");
+							$("#div14").load("<?php echo base_url() ?>statistics/country_ajax_stats/<?php echo $month;?>/<?php if($year===2019){echo date('Y');}else{echo date('Y')-1;}?>");
 
 					});
 				  </script>
@@ -700,7 +738,7 @@ $(document).ready(function(){
 						    </div><script>
 									$(document).ready(function(){
 
-											$("#div9").load("<?php echo base_url() ?>statistics/browser_ajax_stats/<?php echo $month;?>/<?php echo $year;?>");
+											$("#div9").load("<?php echo base_url() ?>statistics/browser_ajax_stats/<?php echo $month;?>/<?php if($year===2019){echo date('Y');}else{echo date('Y')-1;}?>");
 
 									});
 								  </script>
@@ -1153,7 +1191,7 @@ return false;
                         data: [<?php
 						 for ($x = 1; $x <= 12; $x++) {
 							 
-							 $this->common->get_profile_views_month_of_year($get_companyid_from_user,$x);
+							 $this->common->get_profile_views_month_of_year($get_companyid_from_user,$x,$year);
 							 
 						 }?>],
                        backgroundColor: ["#222","#222","#222","#222","#222","#222","#222","#222","#222","#222","#222","#222"],

@@ -136,4 +136,30 @@ class api extends CI_Controller
         exit();
     }
 
+    public function search_company(){
+         $this->load->model('api_company');
+
+         $input = file_get_contents('php://input');
+         $search_term = json_decode($input,true);
+         $response;
+
+         if(isset($search_term['data']) && $search_term['data'] != ''){
+             $company_name = $search_term['data'];
+              $companies = json_encode((array) $this->api_company->search_company($company_name));
+              
+              if($companies=='[]'){
+                  echo 'failed';
+                  exit();
+              }
+              echo $companies;
+              exit();
+         }else{
+             // $companies = json_encode((array) $this->api_company->search_company($search_term));
+             // echo $companies;
+             // exit();
+
+             echo 'Enter company name.';
+             exit();
+         }
+    }
 }

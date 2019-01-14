@@ -233,11 +233,11 @@ function advert_stats() {
 		
 	}
 		
-    public function get_new_visits() {
+    public function get_new_visits($year) {
 		$CI = &get_instance();
 			
 		$this->db2 = $CI->load->database('db2', TRUE);
-        $query = $this->db2->query('SELECT COUNT(id) as new_visits FROM stat_tracker WHERE website_id = '.WEBSITE_ID.' and month='.date('m').' and  year='.date('Y').' and website_id = '.WEBSITE_ID.'');
+        $query = $this->db2->query('SELECT COUNT(id) as new_visits FROM stat_tracker WHERE website_id = '.WEBSITE_ID.' and month='.date('m').' and  year='.$year.' and website_id = '.WEBSITE_ID.'');
 		foreach($query->result_array() as $row) {
 			$new_visits = $row['new_visits'];
 		}
@@ -257,11 +257,11 @@ function advert_stats() {
 		
 	}
 
-		public function get_advert_views_month($company_id , $month) {
+		public function get_advert_views_month($company_id,$month,$year) {
 			$CI = &get_instance();
 			
 		$this->db2 = $CI->load->database('db2', TRUE);
-        $query = $this->db2->query('SELECT COUNT(ip) as advert_views  FROM stats_ad_clicked WHERE website_id = '.WEBSITE_ID.' and company_ad_visited='.$company_id.' and  ad_type = "advert" and MONTH(timestamp) = '.$month.' AND YEAR(timestamp) = '.date('Y').'');
+        $query = $this->db2->query('SELECT COUNT(ip) as advert_views  FROM stats_ad_clicked WHERE website_id = '.WEBSITE_ID.' and company_ad_visited='.$company_id.' and  ad_type = "advert" and MONTH(timestamp) = '.$month.' AND YEAR(timestamp) = '.$year.'');
 		foreach($query->result_array() as $row) {
 			$advert_views = $row['advert_views'];
 		}
@@ -269,11 +269,11 @@ function advert_stats() {
 		
 	}
 		
-	public function get_returned_visits($month) {
+	public function get_returned_visits($month,$year) {
 		$CI = &get_instance();
 			
 		$this->db2 = $CI->load->database('db2', TRUE);
-        $query = $this->db2->query('SELECT COUNT(id) as visits FROM stats_visit WHERE website_id = '.WEBSITE_ID.' AND MONTH(timestamp) = '.$month.' AND YEAR(timestamp) = '.date('Y').'');
+        $query = $this->db2->query('SELECT COUNT(id) as visits FROM stats_visit WHERE website_id = '.WEBSITE_ID.' AND MONTH(timestamp) = '.$month.' AND YEAR(timestamp) = '.$year.'');
 		foreach($query->result_array() as $row) {
 			$visits = $row['visits'];
 		}
@@ -281,11 +281,11 @@ function advert_stats() {
 		
 	}
 	
-	public function get_profile_views_month($company_id,$month) {
+	public function get_profile_views_month($company_id,$month,$year) {
 		$CI = &get_instance();
 			
 		$this->db2 = $CI->load->database('db2', TRUE);
-        $query = $this->db2->query('SELECT COUNT(id) as profile_views FROM stats_ad_clicked WHERE website_id = '.WEBSITE_ID.' and company_ad_visited='.$company_id.' and  ad_type <> "advert" AND MONTH(timestamp) = '.$month.' AND YEAR(timestamp) = '.date('Y').'');
+        $query = $this->db2->query('SELECT COUNT(id) as profile_views FROM stats_ad_clicked WHERE website_id = '.WEBSITE_ID.' and company_ad_visited='.$company_id.' and  ad_type <> "advert" AND MONTH(timestamp) = '.$month.' AND YEAR(timestamp) = '.$year.'');
 		foreach($query->result_array() as $row) {
 			$profile_views = $row['profile_views'];
 		}
@@ -293,12 +293,12 @@ function advert_stats() {
 		
 	}
 		
-	public function get_people_reached_month($company_id,$month) {
+	public function get_people_reached_month($company_id,$month,$year) {
 		$CI = &get_instance();
 			
 		$this->db2 = $CI->load->database('db2', TRUE);
 		
-        $query = $this->db2->query('SELECT COUNT(DISTINCT ip) as people_reached FROM stats_ads_shown WHERE website_id = '.WEBSITE_ID.' and company_ad_shown ='.$company_id.' AND MONTH(timestamp) = '.$month.' AND YEAR(timestamp) = '.date('Y').'');
+        $query = $this->db2->query('SELECT COUNT(DISTINCT ip) as people_reached FROM stats_ads_shown WHERE website_id = '.WEBSITE_ID.' and company_ad_shown ='.$company_id.' AND MONTH(timestamp) = '.$month.' AND YEAR(timestamp) = '.$year.'');
 		foreach($query->result_array() as $row) {
 			$people_reached = $row['people_reached'];
 		}
@@ -403,11 +403,11 @@ function advert_stats() {
     return $this->db2->get()->result();
 	}	
 		
-	public function get_profile_views_month_of_year($company_id,$month) {
+	public function get_profile_views_month_of_year($company_id,$month,$year) {
 		$CI = &get_instance();
 			
 		$this->db2 = $CI->load->database('db2', TRUE);
-        $query = $this->db2->query('SELECT COUNT(id) as profile_views FROM stats_ad_clicked WHERE website_id = '.WEBSITE_ID.' and company_ad_visited='.$company_id.' and  ad_type <> "advert" AND MONTH(timestamp) = '.$month.' AND YEAR(timestamp) = '.date('Y').'');
+        $query = $this->db2->query('SELECT COUNT(id) as profile_views FROM stats_ad_clicked WHERE website_id = '.WEBSITE_ID.' and company_ad_visited='.$company_id.' and  ad_type <> "advert" AND MONTH(timestamp) = '.$month.' AND YEAR(timestamp) = '.$year.'');
 		foreach($query->result_array() as $row) {
 			$profile_views = $row['profile_views'];
 		}
